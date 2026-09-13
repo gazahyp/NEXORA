@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="brand/nexora-mark-glow.svg" alt="NEXORA" width="120" />
+
 <pre>
 ███╗   ██╗███████╗██╗  ██╗ ██████╗ ██████╗  █████╗ 
 ████╗  ██║██╔════╝╚██╗██╔╝██╔═══██╗██╔══██╗██╔══██╗
@@ -15,6 +17,8 @@
 [![Updater endpoint](https://img.shields.io/badge/updater-latest.json-16a34a)](https://github.com/gazahyp/NEXORA/releases/latest/download/latest.json)
 [![Download page](https://img.shields.io/badge/download-page-2563eb)](https://gazahyp.github.io/NEXORA/)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078d4)](#supported-platforms)
+[![License: Freeware](https://img.shields.io/badge/license-freeware-orange)](LICENSE)
+[![Contributing](https://img.shields.io/badge/contributing-guidelines-6b7280)](CONTRIBUTING.md)
 
 </div>
 
@@ -35,11 +39,15 @@ It contains **no application source code** — only:
 | [`index.html`](https://gazahyp.github.io/NEXORA/) | GitHub Pages download landing page |
 | [`latest.json`](latest.json) *(in-tree copy)* | Same-origin manifest mirror used by the landing page |
 | [Releases](../../releases) | Signed installers, portable archives, checksums |
+| [`docs/`](docs/) | Privacy policy, terms, third-party licenses |
+| [`LICENSE`](LICENSE) · [`SECURITY.md`](SECURITY.md) · [`CONTRIBUTING.md`](CONTRIBUTING.md) | Project governance |
+| [`brand/`](brand/) | Official NEXORA logo assets (SVG) |
 
 > [!IMPORTANT]
-> Files in this repository are **machine-generated**. Do not edit them by
-> hand — everything is published by `npm run publish:update` in the NEXORA
-> source repository (see [Release pipeline](#release-pipeline)).
+> `latest.json` (both copies) and the Releases are **machine-generated** by
+> the publish pipeline in the NEXORA source repository — never edit them by
+> hand. `README.md`, `index.html`, docs, and brand assets may be maintained
+> directly. See [Release pipeline](#release-pipeline).
 
 ## Endpoints
 
@@ -137,8 +145,27 @@ git commit -am "chore(pages): point latest.json at v1.0.30" && git push
 gh release delete v1.0.30 --yes -R gazahyp/NEXORA
 ```
 
+## Documentation
+
+| Document | About |
+| --- | --- |
+| [Privacy Policy](docs/privacy-policy.md) | What NEXORA stores locally vs. transmits — it's local-first, and the list is short |
+| [Terms of Service](docs/terms-of-service.md) | Usage rules: official game sources only, reversible system tweaks |
+| [Third-party licenses](docs/third-party-licenses.md) | Attribution for every runtime dependency |
+| [Security Policy](SECURITY.md) | How to report vulnerabilities + the app's security design |
+| [Contributing](CONTRIBUTING.md) | Bug reports, feedback, docs & translations |
+| [Code of Conduct](CODE_OF_CONDUCT.md) | The community part |
+
 ## License
 
-Release artifacts are distributed under the NEXORA end-user license. This
-repository's tooling and landing page: © Gaza Ibrahim, all rights reserved
-unless otherwise noted.
+NEXORA is **freeware, not open source** — free to use and to redistribute
+via unmodified installers from [GitHub Releases](../../releases), with all
+other rights reserved. Full terms: [LICENSE](LICENSE).
+
+Third-party components remain under their own licenses
+([attribution](docs/third-party-licenses.md)); game data and cover artwork
+belong to their respective publishers.
+
+---
+
+<sub>Made with ☕ by <a href="https://github.com/gazahyp">Gaza Ibrahim</a> — <a href="https://gazahyp.github.io/NEXORA/">download NEXORA</a></sub>

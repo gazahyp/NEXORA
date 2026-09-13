@@ -1,0 +1,65 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="420" viewBox="0 0 1560 420" role="img" aria-label="NEXORA">
+  <!-- NEXORA logotype (horizontal lockup, dark mode).
+       The wordmark is drawn as geometric stroke paths (Orbitron-style square
+       letterforms) so it renders identically everywhere without fonts. -->
+  <defs>
+    <linearGradient id="brandL" x1="40" y1="30" x2="260" y2="390" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A855F7"/>
+      <stop offset="0.45" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="boltL" x1="150" y1="60" x2="150" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="0.5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#C026D3"/>
+    </linearGradient>
+    <linearGradient id="textL" x1="480" y1="110" x2="1490" y2="310" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F5F3FF"/>
+      <stop offset="0.55" stop-color="#E2E8F0"/>
+      <stop offset="1" stop-color="#BFDBFE"/>
+    </linearGradient>
+    <filter id="glowCP" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="14"/>
+    </filter>
+    <filter id="glowTP" x="-20%" y="-40%" width="140%" height="180%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+    <clipPath id="tileL">
+      <rect x="24" y="24" width="372" height="372" rx="94"/>
+    </clipPath>
+  </defs>
+
+  <!-- Icon mark (same construction as nexora-icon.svg, scaled to the lockup) -->
+  <g clip-path="url(#tileL)">
+    <rect x="24" y="24" width="372" height="372" fill="#0E0C24"/>
+    <g opacity="0.75">
+      <path d="M160 106 L208 148 L208 256 L160 298 Z" fill="#8B5CF6" filter="url(#glowCP)"/>
+      <path d="M250 148 L298 106 L298 298 L250 256 Z" fill="#3B82F6" filter="url(#glowCP)"/>
+      <path d="M216 96 L156 212 L198 212 L170 288 L272 172 L232 172 L262 96 Z" fill="#22D3EE" filter="url(#glowCP)"/>
+    </g>
+    <path d="M160 106 L208 148 L208 256 L160 298 Z" fill="url(#brandL)"/>
+    <path d="M250 148 L298 106 L298 298 L250 256 Z" fill="url(#brandL)"/>
+    <path d="M216 96 L156 212 L198 212 L170 288 L272 172 L232 172 L262 96 Z" fill="url(#boltL)"/>
+  </g>
+
+  <!-- Wordmark glow (offset copy) -->
+  <g filter="url(#glowTP)" opacity="0.55" fill="none" stroke="#8B5CF6" stroke-width="30">
+    <path transform="translate(480 0)" d="M0 310 L0 110 L130 310 L130 110"/>
+    <path transform="translate(656 0)" d="M130 110 L0 110 L0 310 L130 310 M0 210 L104 210"/>
+    <path transform="translate(832 0)" d="M0 110 L130 310 M130 110 L0 310"/>
+    <path transform="translate(1008 0)" d="M104 110 L26 110 Q0 110 0 136 L0 284 Q0 310 26 310 L104 310 Q130 310 130 284 L130 136 Q130 110 104 110"/>
+    <path transform="translate(1184 0)" d="M0 310 L0 110 L92 110 Q130 110 130 152 L130 168 Q130 210 92 210 L0 210 M78 210 L130 310"/>
+    <path transform="translate(1360 0)" d="M0 310 L52 110 L78 110 L130 310 M26 232 L104 232"/>
+  </g>
+  <!-- Wordmark: square geometric letterforms, stroke-constructed -->
+  <g fill="none" stroke="url(#textL)" stroke-width="30" stroke-linecap="square" stroke-linejoin="miter">
+    <path transform="translate(480 0)" d="M0 310 L0 110 L130 310 L130 110"/>
+    <path transform="translate(656 0)" d="M130 110 L0 110 L0 310 L130 310 M0 210 L104 210"/>
+    <path transform="translate(832 0)" d="M0 110 L130 310 M130 110 L0 310"/>
+    <path transform="translate(1008 0)" d="M104 110 L26 110 Q0 110 0 136 L0 284 Q0 310 26 310 L104 310 Q130 310 130 284 L130 136 Q130 110 104 110"/>
+    <path transform="translate(1184 0)" d="M0 310 L0 110 L92 110 Q130 110 130 152 L130 168 Q130 210 92 210 L0 210 M78 210 L130 310"/>
+    <path transform="translate(1360 0)" d="M0 310 L52 110 L78 110 L130 310 M26 232 L104 232"/>
+  </g>
+  <!-- Accent underline slash -->
+  <path d="M482 352 L1424 352" stroke="url(#boltL)" stroke-width="10" stroke-linecap="round" opacity="0.85"/>
+</svg>

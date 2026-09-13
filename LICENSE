@@ -1,0 +1,38 @@
+NEXORA Freeware License
+
+Copyright (c) 2026 Gaza Ibrahim ("the Author"). All rights reserved.
+
+NEXORA is freeware, not open source. You are granted a non-exclusive,
+non-transferable license to:
+
+1. USE — Run the Software, at no charge, for personal or internal purposes
+   on any number of machines you control.
+2. REDISTRIBUTE — Share unmodified, verbatim installers published by the
+   Author's official release channel (GitHub Releases of
+   gazahyp/NEXORA), provided the SHA-256 checksums and version are left
+   intact and no fee is charged for the Software itself.
+3. QUOTE — Use short excerpts of documentation and the NEXORA name/logo in
+   reviews, tutorials, and academic work with attribution.
+
+You may NOT:
+
+a. Sell, sublicense, rent, or bundle the Software with paid products;
+b. Modify, reverse engineer, decompile, or disassemble the binary, except
+   to the extent applicable law expressly permits notwithstanding this
+   restriction;
+c. Publish re-hosted or tampered builds as if they were official;
+d. Remove or alter copyright notices, license terms, or update signatures.
+
+Third-party components remain under their own licenses (see
+docs/THIRD-PARTY-LICENSES.md). Content discovered through the app (game
+data, cover artwork) belongs to its respective owners.
+
+Contributions: submitting a pull request or patch to the Author's
+repositories grants the Author the right to incorporate it into NEXORA
+under this license; copyright of your contribution stays with you.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHOR BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY ARISING FROM USE
+OF OR INABILITY TO USE THE SOFTWARE.

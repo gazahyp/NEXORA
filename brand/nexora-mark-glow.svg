@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="NEXORA">
+  <!-- NEXORA glow-cut variant: full-bleed neon mark on transparent background.
+       For hero headers / splash screens / loading screens on dark UI. -->
+  <defs>
+    <linearGradient id="brandG" x1="110" y1="90" x2="420" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A855F7"/>
+      <stop offset="0.45" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="boltG" x1="256" y1="120" x2="256" y2="392" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="0.5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#C026D3"/>
+    </linearGradient>
+    <filter id="glowG1" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="26"/>
+    </filter>
+    <filter id="glowG2" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="18"/>
+    </filter>
+    <filter id="glowG3" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+  <g opacity="0.8">
+    <path d="M170 138 L230 190 L230 322 L170 374 Z" fill="#8B5CF6" filter="url(#glowG2)"/>
+    <path d="M282 190 L342 138 L342 374 L282 322 Z" fill="#3B82F6" filter="url(#glowG2)"/>
+    <path d="M256 128 L184 272 L236 272 L200 384 L328 228 L272 228 L312 128 Z" fill="#22D3EE" filter="url(#glowG1)"/>
+  </g>
+  <path d="M170 138 L230 190 L230 322 L170 374 Z" fill="url(#brandG)" filter="url(#glowG3)"/>
+  <path d="M282 190 L342 138 L342 374 L282 322 Z" fill="url(#brandG)" filter="url(#glowG3)"/>
+  <path d="M256 128 L184 272 L236 272 L200 384 L328 228 L272 228 L312 128 Z" fill="url(#boltG)" filter="url(#glowG3)"/>
+  <path d="M170 138 L230 190 L230 322 L170 374 Z" fill="url(#brandG)"/>
+  <path d="M282 190 L342 138 L342 374 L282 322 Z" fill="url(#brandG)"/>
+  <path d="M256 128 L184 272 L236 272 L200 384 L328 228 L272 228 L312 128 Z" fill="url(#boltG)"/>
+</svg>
