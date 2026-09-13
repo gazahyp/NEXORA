@@ -128,25 +128,40 @@
     </footer>
 
     <script>
-      // Read the live updater manifest so the buttons never drift from the release.
-      const ENDPOINT =
-        "https://github.com/gazahyp/nexora-updates/releases/latest/download/latest.json";
-      fetch(ENDPOINT)
-        .then((r) => r.json())
-        .then((m) => {
-          const v = m.version || "";
-          document.getElementById("ver").textContent = "v" + v;
-          const base = "https://github.com/gazahyp/nexora-updates/releases/download/v" + v;
-          document.getElementById("dlSetup").href = base + "/NEXORA-Setup-" + v + ".exe";
-          document.getElementById("dlZip").href = base + "/NEXORA-Portable-" + v + ".zip";
-        })
-        .catch(() => {
-          document.getElementById("ver").textContent = "see releases page";
-          document.getElementById("dlSetup").href =
-            "https://github.com/gazahyp/nexora-updates/releases/latest";
-          document.getElementById("dlZip").href =
-            "https://github.com/gazahyp/nexora-updates/releases/latest";
-        });
+      // Fill the buttons from the release manifest. Order: same-origin copy
+      // (kept in step with releases by scripts/publish-update.mjs), then the
+      // CORS-enabled GitHub API, then the raw release asset as last resort.
+      const BASE = "https://github.com/gazahyp/nexora-updates";
+      const SOURCES = [
+        { url: "latest.json", fromApi: false },
+        { url: "https://api.github.com/repos/gazahyp/nexora-updates/releases/latest", fromApi: true },
+        { url: BASE + "/releases/latest/download/latest.json", fromApi: false },
+      ];
+      function apply(m) {
+        const v = m.version || "";
+        if (!v) return false;
+        document.getElementById("ver").textContent = "v" + v;
+        const base = BASE + "/releases/download/v" + v;
+        document.getElementById("dlSetup").href =
+          (m.platforms?.["windows-x86_64"]?.url) || base + "/NEXORA-Setup-" + v + ".exe";
+        document.getElementById("dlZip").href = base + "/NEXORA-Portable-" + v + ".zip";
+        return true;
+      }
+      (async () => {
+        for (const s of SOURCES) {
+          try {
+            const r = await fetch(s.url);
+            if (!r.ok) continue;
+            const j = await r.json();
+            if (apply(s.fromApi ? { version: String(j.tag_name || "").replace(/^v/, ""), } : j)) return;
+          } catch {
+            /* next source */
+          }
+        }
+        document.getElementById("ver").textContent = "see releases page";
+        document.getElementById("dlSetup").href = BASE + "/releases/latest";
+        document.getElementById("dlZip").href = BASE + "/releases/latest";
+      })();
     </script>
   </body>
 </html>
