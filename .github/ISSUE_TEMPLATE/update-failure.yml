@@ -1,0 +1,46 @@
+name: Update failure
+about: The in-app updater failed, downloaded a broken version, or is stuck
+title: "[updater] "
+labels: bug
+body:
+  - type: markdown
+    value: |
+      Thanks for reporting. The updater verifies minisign signatures — a
+      "signature invalid" error means the download was tampered with or a
+      publish went wrong, so please include the exact message.
+  - type: input
+    id: from-version
+    attributes:
+      label: Updating from → to
+      description: Current installed version and the version offered by the updater
+      placeholder: "1.0.29 → 1.0.30"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: Steps, exact error text, and where it failed (check / download / install)
+    validations:
+      required: true
+  - type: dropdown
+    id: channel
+    attributes:
+      label: Failure stage
+      options:
+        - Update check (no update offered / wrong version)
+        - Download
+        - Signature verification
+        - Install
+        - Other
+  - type: input
+    id: os
+    attributes:
+      label: Windows build
+      placeholder: "Windows 11 23H2 (22631)"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs
+      description: NEXORA log output if available (Settings → About → Open logs). Automatically formatted as code.
+      render: shell
