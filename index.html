@@ -104,7 +104,7 @@
     <div class="actions">
       <a class="btn primary" id="dlSetup" href="#">⬇ Download Setup (.exe)</a>
       <a class="btn ghost" id="dlZip" href="#">Portable (.zip)</a>
-      <a class="btn ghost" href="https://github.com/gazahyp/nexora-updates/releases" target="_blank" rel="noreferrer">All releases</a>
+      <a class="btn ghost" href="https://github.com/gazahyp/NEXORA/releases" target="_blank" rel="noreferrer">All releases</a>
     </div>
 
     <div class="features">
@@ -124,17 +124,17 @@
       Game data &amp; covers by
       <a href="https://rawg.io/apidocs" target="_blank" rel="noreferrer">RAWG</a>
       · Auto-updates hosted on
-      <a href="https://github.com/gazahyp/nexora-updates" target="_blank" rel="noreferrer">GitHub</a>
+      <a href="https://github.com/gazahyp/NEXORA" target="_blank" rel="noreferrer">GitHub</a>
     </footer>
 
     <script>
       // Fill the buttons from the release manifest. Order: same-origin copy
       // (kept in step with releases by scripts/publish-update.mjs), then the
       // CORS-enabled GitHub API, then the raw release asset as last resort.
-      const BASE = "https://github.com/gazahyp/nexora-updates";
+      const BASE = "https://github.com/gazahyp/NEXORA";
       const SOURCES = [
         { url: "latest.json", fromApi: false },
-        { url: "https://api.github.com/repos/gazahyp/nexora-updates/releases/latest", fromApi: true },
+        { url: "https://api.github.com/repos/gazahyp/NEXORA/releases/latest", fromApi: true },
         { url: BASE + "/releases/latest/download/latest.json", fromApi: false },
       ];
       function apply(m) {

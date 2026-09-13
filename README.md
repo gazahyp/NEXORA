@@ -11,9 +11,9 @@
 
 **Update infrastructure for NEXORA — the Windows gaming control hub**
 
-[![Latest release](https://img.shields.io/github/v/release/gazahyp/nexora-updates?label=latest&color=8b5cf6)](https://github.com/gazahyp/nexora-updates/releases/latest)
-[![Updater endpoint](https://img.shields.io/badge/updater-latest.json-16a34a)](https://github.com/gazahyp/nexora-updates/releases/latest/download/latest.json)
-[![Download page](https://img.shields.io/badge/download-page-2563eb)](https://gazahyp.github.io/nexora-updates/)
+[![Latest release](https://img.shields.io/github/v/release/gazahyp/NEXORA?label=latest&color=8b5cf6)](https://github.com/gazahyp/NEXORA/releases/latest)
+[![Updater endpoint](https://img.shields.io/badge/updater-latest.json-16a34a)](https://github.com/gazahyp/NEXORA/releases/latest/download/latest.json)
+[![Download page](https://img.shields.io/badge/download-page-2563eb)](https://gazahyp.github.io/NEXORA/)
 [![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078d4)](#supported-platforms)
 
 </div>
@@ -22,7 +22,7 @@
 
 ## What is this repository?
 
-`nexora-updates` is the **release and auto-update host** for
+`NEXORA` (`gazahyp/NEXORA`) is the **release and auto-update host** for
 **NEXORA** — a Windows gaming control hub built with Tauri 2 + Rust + React.
 It exists so every installed NEXORA app has exactly one trusted place to
 check for, verify, and download new versions.
@@ -31,8 +31,8 @@ It contains **no application source code** — only:
 
 | Path | Role |
 | --- | --- |
-| [`latest.json`](https://github.com/gazahyp/nexora-updates/releases/latest/download/latest.json) | Tauri updater manifest served to all installed clients |
-| [`index.html`](https://gazahyp.github.io/nexora-updates/) | GitHub Pages download landing page |
+| [`latest.json`](https://github.com/gazahyp/NEXORA/releases/latest/download/latest.json) | Tauri updater manifest served to all installed clients |
+| [`index.html`](https://gazahyp.github.io/NEXORA/) | GitHub Pages download landing page |
 | [`latest.json`](latest.json) *(in-tree copy)* | Same-origin manifest mirror used by the landing page |
 | [Releases](../../releases) | Signed installers, portable archives, checksums |
 
@@ -45,13 +45,13 @@ It contains **no application source code** — only:
 
 ```text
 Updater manifest (clients poll this)
-  https://github.com/gazahyp/nexora-updates/releases/latest/download/latest.json
+  https://github.com/gazahyp/NEXORA/releases/latest/download/latest.json
 
 Download landing page (GitHub Pages)
-  https://gazahyp.github.io/nexora-updates/
+  https://gazahyp.github.io/NEXORA/
 
 Latest release assets
-  https://github.com/gazahyp/nexora-updates/releases/latest
+  https://github.com/gazahyp/NEXORA/releases/latest
 ```
 
 ## Supported platforms
@@ -72,7 +72,7 @@ Latest release assets
   "pub_date": "2026-09-13T21:59:22.963Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/gazahyp/nexora-updates/releases/download/v1.0.30/NEXORA-Setup-1.0.30.exe",
+      "url": "https://github.com/gazahyp/NEXORA/releases/download/v1.0.30/NEXORA-Setup-1.0.30.exe",
       "signature": "dW50cnVzdGVk..."   // base64 minisign signature of the .exe bytes
     }
   }
@@ -127,14 +127,14 @@ Only needed when the automated pipeline misbehaves:
 
 ```bash
 # Promote an existing release to "latest" (what /releases/latest/ resolves to)
-gh release edit v1.0.30 --latest -R gazahyp/nexora-updates
+gh release edit v1.0.30 --latest -R gazahyp/NEXORA
 
 # Re-point the Pages mirror at a specific release's manifest
-gh release download v1.0.30 -p latest.json -D . -R gazahyp/nexora-updates --clobber
+gh release download v1.0.30 -p latest.json -D . -R gazahyp/NEXORA --clobber
 git commit -am "chore(pages): point latest.json at v1.0.30" && git push
 
 # Remove a bad release (prevents clients from resolving it)
-gh release delete v1.0.30 --yes -R gazahyp/nexora-updates
+gh release delete v1.0.30 --yes -R gazahyp/NEXORA
 ```
 
 ## License
