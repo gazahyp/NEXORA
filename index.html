@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NEXORA — Download</title>
+    <meta name="description" content="NEXORA: Windows gaming control hub — hardware monitor, game library booster, optimizer and screen recorder. Free download." />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #090c11;
+        --panel: #10151d;
+        --border: #232b38;
+        --text: #e8edf4;
+        --muted: #9aa7b8;
+        --accent: #8b5cf6;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+        background: radial-gradient(1200px 600px at 70% -10%, #1b1233 0%, var(--bg) 55%);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 48px 20px 32px;
+      }
+      .logo {
+        font-size: 15px;
+        font-weight: 800;
+        letter-spacing: .38em;
+        color: var(--accent);
+        margin-bottom: 18px;
+      }
+      h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; text-align: center; max-width: 720px; }
+      h1 span { color: var(--accent); }
+      .sub { color: var(--muted); margin-top: 14px; text-align: center; max-width: 560px; font-size: 16px; }
+      .version { margin-top: 10px; font-size: 13px; color: var(--muted); }
+      .version b { color: var(--text); font-variant-numeric: tabular-nums; }
+      .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; justify-content: center; }
+      a.btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 15px;
+        padding: 14px 26px;
+        border-radius: 12px;
+        transition: transform .15s ease, box-shadow .15s ease;
+      }
+      a.primary {
+        background: linear-gradient(135deg, var(--accent), #6d28d9);
+        color: #fff;
+        box-shadow: 0 8px 28px rgba(139, 92, 246, .35);
+      }
+      a.primary:hover { transform: translateY(-2px); }
+      a.ghost {
+        border: 1px solid var(--border);
+        color: var(--text);
+        background: var(--panel);
+      }
+      a.ghost:hover { border-color: var(--accent); }
+      .features {
+        margin-top: 52px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        gap: 12px;
+        max-width: 860px;
+        width: 100%;
+      }
+      .f {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 16px 18px;
+        font-size: 14px;
+      }
+      .f b { display: block; margin-bottom: 4px; font-size: 14.5px; }
+      .f span { color: var(--muted); }
+      footer {
+        margin-top: auto;
+        padding-top: 56px;
+        font-size: 12.5px;
+        color: var(--muted);
+        text-align: center;
+        line-height: 1.9;
+      }
+      footer a { color: var(--muted); }
+      .note { margin-top: 18px; font-size: 12.5px; color: var(--muted); max-width: 620px; text-align: center; }
+    </style>
+  </head>
+  <body>
+    <div class="logo">NEXORA</div>
+    <h1>Your PC. Your games.<br /><span>Full control.</span></h1>
+    <p class="sub">
+      Windows gaming control hub: live hardware monitor, game library with booster,
+      safe optimizer, overlay FPS and built-in screen recorder. Free, offline-first,
+      with automatic updates.
+    </p>
+    <p class="version">Latest release: <b id="ver">…</b></p>
+
+    <div class="actions">
+      <a class="btn primary" id="dlSetup" href="#">⬇ Download Setup (.exe)</a>
+      <a class="btn ghost" id="dlZip" href="#">Portable (.zip)</a>
+      <a class="btn ghost" href="https://github.com/gazahyp/nexora-updates/releases" target="_blank" rel="noreferrer">All releases</a>
+    </div>
+
+    <div class="features">
+      <div class="f"><b>🎮 Game Library Hub</b><span>Steam, Epic, Riot, GOG & more — artwork, profiles, one-click launch</span></div>
+      <div class="f"><b>🚀 Game Booster</b><span>Live optimization while gaming, with honest reversible tweaks</span></div>
+      <div class="f"><b>📊 Hardware Monitor</b><span>CPU / GPU / RAM / temps / fans at 1 Hz, overlay FPS</span></div>
+      <div class="f"><b>🎬 Record Studio</b><span>FFmpeg screen recording with NVENC / AMF / QuickSync</span></div>
+    </div>
+
+    <p class="note">
+      Windows 10/11 x64. Unsigned build — SmartScreen may warn “Unknown publisher”;
+      click “More info → Run anyway”. SHA-256 checksums are published with every
+      release on the releases page.
+    </p>
+
+    <footer>
+      Game data &amp; covers by
+      <a href="https://rawg.io/apidocs" target="_blank" rel="noreferrer">RAWG</a>
+      · Auto-updates hosted on
+      <a href="https://github.com/gazahyp/nexora-updates" target="_blank" rel="noreferrer">GitHub</a>
+    </footer>
+
+    <script>
+      // Read the live updater manifest so the buttons never drift from the release.
+      const ENDPOINT =
+        "https://github.com/gazahyp/nexora-updates/releases/latest/download/latest.json";
+      fetch(ENDPOINT)
+        .then((r) => r.json())
+        .then((m) => {
+          const v = m.version || "";
+          document.getElementById("ver").textContent = "v" + v;
+          const base = "https://github.com/gazahyp/nexora-updates/releases/download/v" + v;
+          document.getElementById("dlSetup").href = base + "/NEXORA-Setup-" + v + ".exe";
+          document.getElementById("dlZip").href = base + "/NEXORA-Portable-" + v + ".zip";
+        })
+        .catch(() => {
+          document.getElementById("ver").textContent = "see releases page";
+          document.getElementById("dlSetup").href =
+            "https://github.com/gazahyp/nexora-updates/releases/latest";
+          document.getElementById("dlZip").href =
+            "https://github.com/gazahyp/nexora-updates/releases/latest";
+        });
+    </script>
+  </body>
+</html>
