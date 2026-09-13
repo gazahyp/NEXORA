@@ -1,11 +1,11 @@
 {
-  "version": "1.0.21",
-  "notes": "NEXORA 1.0.21",
-  "pub_date": "2026-09-13T00:19:54.680Z",
+  "version": "1.0.22",
+  "notes": "NEXORA 1.0.22",
+  "pub_date": "2026-09-13T00:52:25.941Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/gazahyp/nexora-updates/releases/download/v1.0.21/NEXORA-Setup-1.0.21.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZktVdWJzYVVEQjBlaTM3dEozaDBLTVplaEgwRHFqWkxtZTBJZHIrbE5yVDRXVHQwMWFEam8zV3hJekwzck5uci9wSmtLSUorVkcwU3VpSnpFNlpjN1RLdFc5YUhXUXdZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MjU4NzE5CWZpbGU6TkVYT1JBXzEuMC4yMV94NjQtc2V0dXAuZXhlCnowK2E0WGR3Z3lGeERnVHVzQU1rV1Y5MlNKZmpBR2g4cHcwZnY1ZkVReWh1ZUFvQWZ2bnRGTEpFaHBBZlJQcDJKS2ljSmhxT1Y3cGxwRFFGYmZ5Z0FBPT0K"
+      "url": "https://github.com/gazahyp/nexora-updates/releases/download/v1.0.22/NEXORA-Setup-1.0.22.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZktVdWJzYVVEQjQ0VHNkL0Q2U0VZdjZUR1JkMmkya3hEZ0lHdmFkS0tkY0Q1VmdBY3plL1NHeFN0eUR1UUl1QlRra3l6aGp5Q0lwMjBVL2ZuQ3YrVjNZRVYrdUM5b1FvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MjYwNjU4CWZpbGU6TkVYT1JBXzEuMC4yMl94NjQtc2V0dXAuZXhlCmEvS0xDUkhNUmxZRThneXBzRlg0R1RWc1p3S0I4RHd5RUxUOWtGSkc4Z1B2NVJockx3MjBDelFINXVaZlNHRGRCeXVIWllqQ1l1c3NFM3VlQmFyOEN3PT0K"
     }
   }
 }
