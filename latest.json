@@ -4,7 +4,7 @@
   "pub_date": "2026-09-13T21:59:22.963Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/gazahyp/nexora-updates/releases/download/v1.0.30/NEXORA-Setup-1.0.30.exe",
+      "url": "https://github.com/gazahyp/NEXORA/releases/download/v1.0.30/NEXORA-Setup-1.0.30.exe",
       "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZktVdWJzYVVEQjdBMjkrTlU1YWc1ZnQ0d2hxZkN5ZTVaWHRacm94dTBLQmlGM3M4dlZrV3FJemlibjg3SlBDQmNHMlBDbXlubWN0ekFmQ3VURFFaVmpDa2JKbGpJa0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MzM2NjgxCWZpbGU6TkVYT1JBXzEuMC4zMF94NjQtc2V0dXAuZXhlClNjV1dqR3EySjBCL2l6czFMT2hSSWhlbzVHb3BZZ2JjUG8vemNoeFEyNXhmQ09xNkxSbDA4azdkU05TR3drSVlRRHJNR1F6ZVBEVlh5dy8rdFJySEFBPT0K"
     }
   }
