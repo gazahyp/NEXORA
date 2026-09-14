@@ -1,11 +1,11 @@
 {
-  "version": "1.0.30",
-  "notes": "NEXORA 1.0.30",
-  "pub_date": "2026-09-13T21:59:22.963Z",
+  "version": "1.0.31",
+  "notes": "NEXORA 1.0.31\n\n**Fixed**\n\n- Game artwork now uses REAL posters everywhere: Discover/Library tiles without\n- Boot is lighter: the overlay webview is built off the startup critical path\n- Sensor discovery stops spamming: idle app.log ~78 lines/s → delta-only, and\n- Honest failure surfaces across Dashboard/Optimizer/Overlay/Hardware Monitor:\n- Processes page fully localized (20 dictionary keys restored EN+ID) and the\n- Security: renderer-supplied download install_dir contained to the app dir;",
+  "pub_date": "2026-09-14T17:00:36.109Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/gazahyp/nexora-updates/releases/download/v1.0.30/NEXORA-Setup-1.0.30.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZktVdWJzYVVEQjdBMjkrTlU1YWc1ZnQ0d2hxZkN5ZTVaWHRacm94dTBLQmlGM3M4dlZrV3FJemlibjg3SlBDQmNHMlBDbXlubWN0ekFmQ3VURFFaVmpDa2JKbGpJa0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MzM2NjgxCWZpbGU6TkVYT1JBXzEuMC4zMF94NjQtc2V0dXAuZXhlClNjV1dqR3EySjBCL2l6czFMT2hSSWhlbzVHb3BZZ2JjUG8vemNoeFEyNXhmQ09xNkxSbDA4azdkU05TR3drSVlRRHJNR1F6ZVBEVlh5dy8rdFJySEFBPT0K"
+      "url": "https://github.com/gazahyp/NEXORA/releases/download/v1.0.31/NEXORA-Setup-1.0.31.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZktVdWJzYVVEQjF1NTEzbjFHY3J3dmtHNHpFL0tvRitITGJSTVNIT1QreURraG5UUVJhVExSV0hNMnltS20xWHNRaUlnUVIwZEpaWGVJUHg3TlY5OVEyTG5ySXlLcWdRPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5NDA1MjE5CWZpbGU6TkVYT1JBXzEuMC4zMV94NjQtc2V0dXAuZXhlCmR2U2VXbDloaWs2eGhFZWNZR0Z6cXFqZDNoODMyeWVPMlhRREpYZjA1aHlyYW5HcFBrVXlqWXJla0poNzNoS2h5L0U2NjB6NURyVFB4eUI0cFNpd0NnPT0K"
     }
   }
 }
