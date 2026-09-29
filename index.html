@@ -6,10 +6,10 @@
     <title>NEXORA — Download</title>
     <meta property="og:type" content="website" />
     <meta property="og:title" content="NEXORA — Download" />
-    <meta property="og:description" content="Windows gaming control hub: game library, booster, hardware monitor &amp; record studio. Free, local-first, signed auto-updates." />
+    <meta property="og:description" content="Windows gaming control hub: game library, booster, hardware monitor & safe optimizer. Free, local-first, signed auto-updates." />
     <meta property="og:image" content="https://raw.githubusercontent.com/gazahyp/NEXORA/main/brand/open-graph.png" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="description" content="NEXORA: Windows gaming control hub — hardware monitor, game library booster, optimizer and screen recorder. Free download." />
+    <meta name="description" content="NEXORA: Windows gaming control hub — live hardware monitor, game library booster and safe optimizer. Free download." />
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/gazahyp/NEXORA/main/brand/open-graph.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -219,7 +219,15 @@
         font-size: 12.5px;
         font-weight: 600;
         color: var(--muted);
+        background: transparent;
+        border: 0;
+        width: 100%;
+        text-align: left;
+        font-family: inherit;
+        cursor: pointer;
+        transition: background .15s ease, color .15s ease;
       }
+      .side-item:hover { color: var(--text); background: rgba(255, 255, 255, .04); }
       .side-item.active {
         background: rgba(139, 92, 246, .16);
         color: var(--text);
@@ -253,6 +261,60 @@
       }
       .bar i.g { background: linear-gradient(90deg, #059669, var(--good)); }
       .bar-val { text-align: right; font-variant-numeric: tabular-nums; color: var(--text); font-weight: 600; }
+
+      /* ---- Mockup panels (Library / Booster / Performance views) ---- */
+      .spark {
+        background: rgba(255, 255, 255, .03);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px;
+      }
+      .spark .k {
+        display: block; font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase;
+        color: var(--muted-2); font-weight: 700; margin-bottom: 8px;
+      }
+      .spark svg { display: block; width: 100%; height: 64px; }
+
+      .lib-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+      .lib-card { display: flex; flex-direction: column; gap: 6px; }
+      .lib-art {
+        aspect-ratio: 3 / 4; border-radius: 8px; border: 1px solid var(--border);
+        display: grid; place-items: center; position: relative; overflow: hidden;
+      }
+      .lib-art svg { width: 26px; height: 26px; color: rgba(233, 238, 246, .55); }
+      .lib-art .plat {
+        position: absolute; left: 5px; bottom: 5px; font-size: 8px; font-weight: 800;
+        letter-spacing: .05em; color: #0b0f16; background: rgba(233, 238, 246, .88);
+        padding: 1px 5px; border-radius: 4px;
+      }
+      .lib-name {
+        font-size: 11px; font-weight: 700; color: var(--text); white-space: nowrap;
+        overflow: hidden; text-overflow: ellipsis;
+      }
+      .lib-meta { font-size: 10px; color: var(--muted-2); }
+
+      .toggles { display: flex; flex-direction: column; gap: 8px; }
+      .tgl {
+        position: relative; display: flex; align-items: center; justify-content: space-between; gap: 10px;
+        background: rgba(255, 255, 255, .03); border: 1px solid var(--border);
+        border-radius: 10px; padding: 10px 12px; cursor: pointer;
+        transition: border-color .15s ease, background .15s ease;
+      }
+      .tgl:hover { border-color: var(--border-2); background: rgba(255, 255, 255, .05); }
+      .tgl .lbl { font-size: 12.5px; font-weight: 600; color: var(--text); }
+      .tgl .hint { display: block; font-size: 10.5px; font-weight: 500; color: var(--muted-2); margin-top: 1px; }
+      .tgl input { position: absolute; opacity: 0; width: 0; height: 0; }
+      .tgl-switch {
+        flex: none; width: 34px; height: 19px; border-radius: 999px;
+        background: rgba(255, 255, 255, .1); position: relative; transition: background .18s ease;
+      }
+      .tgl-switch::after {
+        content: ""; position: absolute; top: 2.5px; left: 2.5px; width: 14px; height: 14px;
+        border-radius: 50%; background: var(--muted); transition: transform .18s ease, background .18s ease;
+      }
+      .tgl input:checked ~ .tgl-switch { background: rgba(139, 92, 246, .45); }
+      .tgl input:checked ~ .tgl-switch::after { transform: translateX(15px); background: var(--accent-2); }
+      .tgl input:focus-visible ~ .tgl-switch { outline: 2px solid var(--accent-2); outline-offset: 2px; }
 
       /* ---- Feature cards ---- */
       .features {
@@ -342,9 +404,10 @@
       @media (max-width: 760px) {
         .shot-body { grid-template-columns: 1fr; min-height: 0; }
         .shot-side { flex-direction: row; flex-wrap: wrap; border-right: none; border-bottom: 1px solid var(--border); padding: 10px; }
-        .side-item { padding: 6px 9px; }
+        .side-item { padding: 6px 9px; width: auto; }
         .grid-cards { grid-template-columns: repeat(2, 1fr); }
         .bar-row { grid-template-columns: 40px 1fr 42px; }
+        .lib-grid { grid-template-columns: repeat(3, 1fr); }
       }
       @media (max-width: 480px) {
         body { padding: 28px 14px 22px; }
@@ -353,6 +416,7 @@
         a.btn { width: 100%; justify-content: center; padding: 13px 18px; }
         .grid-cards { grid-template-columns: 1fr 1fr; }
         .gcard .v { font-size: 16px; }
+        .lib-grid { grid-template-columns: repeat(2, 1fr); }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -379,7 +443,7 @@
     <h1 class="rise d1">Your PC. Your games.<br /><span class="grad">Full control.</span></h1>
     <p class="sub rise d2">
       Windows gaming control hub: live hardware monitor, game library with booster,
-      safe optimizer, and built-in screen recorder. Everything local, everything yours.
+      and safe optimizer. Everything local, everything yours.
     </p>
 
     <div class="badges rise d2">
@@ -421,41 +485,134 @@
       <a class="btn ghost" href="https://github.com/gazahyp/NEXORA/releases" target="_blank" rel="noreferrer">All releases</a>
     </div>
 
-    <!-- App preview: pure-CSS window mockup (no screenshot asset exists yet) -->
-    <div class="shot rise d4" role="img" aria-label="NEXORA application window: sidebar navigation, hardware stats and live sensor bars">
+    <!-- App preview: pure-CSS window mockup (no screenshot asset exists yet).
+         Sidebar is an interactive demo (tabs) — no routing, no page scroll. -->
+    <div class="shot rise d4" role="group" aria-label="NEXORA application window preview (interactive mockup)">
       <div class="shot-bar">
         <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
         <span class="shot-title">NEXORA</span>
       </div>
       <div class="shot-body">
-        <div class="shot-side">
-          <div class="side-item active">
-            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><path d="M4 13h6V4H4v9Zm10 7h6v-9h-6v9ZM4 20h6v-4H4v4Zm10-11h6V4h-6v5Z" fill="currentColor"/></svg>
+        <div class="shot-side" role="tablist" aria-label="NEXORA app sections">
+          <button class="side-item active" role="tab" id="tab-dashboard" aria-controls="panel-dashboard" aria-selected="true">
+            <svg class="side-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 13h6V4H4v9Zm10 7h6v-9h-6v9ZM4 20h6v-4H4v4Zm10-11h6V4h-6v5Z" fill="currentColor"/></svg>
             Dashboard
-          </div>
-          <div class="side-item">
-            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 15V9m4 6V6m4 9v-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+          </button>
+          <button class="side-item" role="tab" id="tab-performance" aria-controls="panel-performance" aria-selected="false" tabindex="-1">
+            <svg class="side-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 19V5m0 14h16M8 15V9m4 6V6m4 9v-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
             Performance
-          </div>
-          <div class="side-item">
-            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10v16H6.5A2.5 2.5 0 0 1 4 17.5v-11ZM14 4h3.5A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20H14V4Z" stroke="currentColor" stroke-width="1.7"/></svg>
+          </button>
+          <button class="side-item" role="tab" id="tab-library" aria-controls="panel-library" aria-selected="false" tabindex="-1">
+            <svg class="side-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10v16H6.5A2.5 2.5 0 0 1 4 17.5v-11ZM14 4h3.5A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20H14V4Z" stroke="currentColor" stroke-width="1.7"/></svg>
             Library
-          </div>
-          <div class="side-item">
-            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="side-item" role="tab" id="tab-booster" aria-controls="panel-booster" aria-selected="false" tabindex="-1">
+            <svg class="side-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
             Booster
-          </div>
-          <div class="side-item">
-            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2.5" stroke="currentColor" stroke-width="1.7"/><rect x="8" y="8" width="4" height="4" rx="1" fill="currentColor"/><path d="M14 8h2M14 12h2M8 14h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          </button>
+          <button class="side-item" role="tab" id="tab-hardware" aria-controls="panel-hardware" aria-selected="false" tabindex="-1">
+            <svg class="side-ico" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2.5" stroke="currentColor" stroke-width="1.7"/><rect x="8" y="8" width="4" height="4" rx="1" fill="currentColor"/><path d="M14 8h2M14 12h2M8 14h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
             Hardware
+          </button>
+        </div>
+
+        <div class="shot-main" role="tabpanel" id="panel-dashboard" aria-labelledby="tab-dashboard">
+          <div class="shot-h">Dashboard · overview</div>
+          <div class="grid-cards">
+            <div class="gcard"><span class="k">CPU</span><span class="v a">47%</span><div class="bar"><i style="width:47%"></i></div></div>
+            <div class="gcard"><span class="k">GPU</span><span class="v g">62%</span><div class="bar"><i class="g" style="width:62%"></i></div></div>
+            <div class="gcard"><span class="k">RAM</span><span class="v">9.4 GB</span><div class="bar"><i style="width:58%"></i></div></div>
           </div>
-          <div class="side-item">
-            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg>
-            Record Studio
+          <div class="bars">
+            <div class="bar-row"><span>CPU °C</span><div class="bar"><i style="width:44%"></i></div><span class="bar-val">49°</span></div>
+            <div class="bar-row"><span>GPU °C</span><div class="bar"><i class="g" style="width:56%"></i></div><span class="bar-val">57°</span></div>
+            <div class="bar-row"><span>Fan</span><div class="bar"><i style="width:38%"></i></div><span class="bar-val">1842</span></div>
           </div>
         </div>
-        <div class="shot-main">
-          <div class="shot-h">Hardware Monitor · live sensors</div>
+
+        <div class="shot-main" role="tabpanel" id="panel-performance" aria-labelledby="tab-performance" hidden>
+          <div class="shot-h">Performance · in-game overlay</div>
+          <div class="grid-cards">
+            <div class="gcard"><span class="k">Avg FPS</span><span class="v a">142</span><div class="bar"><i style="width:71%"></i></div></div>
+            <div class="gcard"><span class="k">1% low</span><span class="v">118</span><div class="bar"><i style="width:59%"></i></div></div>
+            <div class="gcard"><span class="k">Frame time</span><span class="v g">7.0 ms</span><div class="bar"><i class="g" style="width:40%"></i></div></div>
+          </div>
+          <div class="spark">
+            <span class="k">Frametime · last 60 s</span>
+            <svg viewBox="0 0 300 64" preserveAspectRatio="none" aria-hidden="true">
+              <polyline fill="none" stroke="#a78bfa" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"
+                points="0,44 18,40 36,47 54,30 72,36 90,22 108,28 126,18 144,26 162,14 180,24 198,12 216,20 234,9 252,17 270,7 288,13 300,6" />
+            </svg>
+          </div>
+        </div>
+
+        <div class="shot-main" role="tabpanel" id="panel-library" aria-labelledby="tab-library" hidden>
+          <div class="shot-h">Library · 24 games · 7 installed</div>
+          <div class="lib-grid">
+            <div class="lib-card">
+              <div class="lib-art" style="background: linear-gradient(150deg, #4c1d95, #0e0c24)">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 8.5h12M6 12h12M6 15.5h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                <span class="plat">STEAM</span>
+              </div>
+              <span class="lib-name">Elden Ring</span>
+              <span class="lib-meta">62 h · installed</span>
+            </div>
+            <div class="lib-card">
+              <div class="lib-art" style="background: linear-gradient(150deg, #0e7490, #0b1220)">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="2.4" fill="currentColor"/></svg>
+                <span class="plat">RIOT</span>
+              </div>
+              <span class="lib-name">Valorant</span>
+              <span class="lib-meta">34 h · installed</span>
+            </div>
+            <div class="lib-card">
+              <div class="lib-art" style="background: linear-gradient(150deg, #9d174d, #120b16)">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 19V5h3l4 6 4-6h3v14" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+                <span class="plat">GOG</span>
+              </div>
+              <span class="lib-name">Cyberpunk 2077</span>
+              <span class="lib-meta">18 h · update ready</span>
+            </div>
+            <div class="lib-card">
+              <div class="lib-art" style="background: linear-gradient(150deg, #15803d, #0b1207)">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 8.5A1.5 1.5 0 0 1 5.5 7H10v10H5.5A1.5 1.5 0 0 1 4 15.5v-7ZM14 7h4.5A1.5 1.5 0 0 1 20 8.5v7a1.5 1.5 0 0 1-1.5 1.5H14V7Z" stroke="currentColor" stroke-width="1.6"/></svg>
+                <span class="plat">STANDALONE</span>
+              </div>
+              <span class="lib-name">Minecraft</span>
+              <span class="lib-meta">7 h · not installed</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="shot-main" role="tabpanel" id="panel-booster" aria-labelledby="tab-booster" hidden>
+          <div class="shot-h">Booster · ready · reversible</div>
+          <div class="toggles">
+            <label class="tgl">
+              <span class="lbl">Performance mode
+                <span class="hint">Switches Windows to High performance plan</span>
+              </span>
+              <input type="checkbox" checked />
+              <span class="tgl-switch" aria-hidden="true"></span>
+            </label>
+            <label class="tgl">
+              <span class="lbl">Suspend background apps
+                <span class="hint">Pauses non-game background processes</span>
+              </span>
+              <input type="checkbox" checked />
+              <span class="tgl-switch" aria-hidden="true"></span>
+            </label>
+            <label class="tgl">
+              <span class="lbl">Clear temp files on exit
+                <span class="hint">Safe cleanup, never touches your saves</span>
+              </span>
+              <input type="checkbox" />
+              <span class="tgl-switch" aria-hidden="true"></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="shot-main" role="tabpanel" id="panel-hardware" aria-labelledby="tab-hardware" hidden>
+          <div class="shot-h">Hardware Monitor · live sensors · 1 Hz</div>
           <div class="grid-cards">
             <div class="gcard"><span class="k">CPU</span><span class="v a">47%</span><div class="bar"><i style="width:47%"></i></div></div>
             <div class="gcard"><span class="k">GPU</span><span class="v g">62%</span><div class="bar"><i class="g" style="width:62%"></i></div></div>
@@ -499,16 +656,6 @@
         </div>
         <b>Hardware Monitor</b>
         <span>CPU / GPU / RAM / temps / fans sampled at 1 Hz, logged to disk.</span>
-      </div>
-      <div class="f">
-        <div class="fi">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.7"/>
-            <circle cx="12" cy="12" r="2.2" fill="currentColor"/>
-          </svg>
-        </div>
-        <b>Record Studio</b>
-        <span>FFmpeg screen recording with NVENC / AMF / QuickSync encoders.</span>
       </div>
     </div>
 
@@ -581,6 +728,57 @@
         }
         failOpen();
       })().catch(failOpen);
+    </script>
+
+    <script>
+      // Interactive app-window mockup: the sidebar is a real tablist (arrow keys,
+      // Home/End, Enter/Space). It only swaps the preview panel — it never
+      // changes the URL and never scrolls the page.
+      (function () {
+        const tabs = Array.prototype.slice.call(
+          document.querySelectorAll(".shot-side [role='tab']")
+        );
+        const panels = Array.prototype.slice.call(
+          document.querySelectorAll(".shot-main[role='tabpanel']")
+        );
+        if (!tabs.length) return;
+
+        function select(tab, moveFocus) {
+          tabs.forEach(function (t) {
+            const on = t === tab;
+            t.setAttribute("aria-selected", on ? "true" : "false");
+            t.classList.toggle("active", on);
+            t.tabIndex = on ? 0 : -1;
+          });
+          panels.forEach(function (p) {
+            p.hidden = p.getAttribute("aria-labelledby") !== tab.id;
+          });
+          if (moveFocus) tab.focus();
+        }
+
+        tabs.forEach(function (tab, i) {
+          tab.addEventListener("click", function () { select(tab, false); });
+          tab.addEventListener("keydown", function (e) {
+            let next = null;
+            if (e.key === "ArrowRight" || e.key === "ArrowDown") {
+              next = tabs[(i + 1) % tabs.length];
+            } else if (e.key === "ArrowLeft" || e.key === "ArrowUp") {
+              next = tabs[(i - 1 + tabs.length) % tabs.length];
+            } else if (e.key === "Home") {
+              next = tabs[0];
+            } else if (e.key === "End") {
+              next = tabs[tabs.length - 1];
+            }
+            if (next) {
+              e.preventDefault(); // stop the page from scrolling
+              select(next, true);
+            }
+          });
+        });
+
+        // roving tabindex: only the active tab is a tab stop
+        select(tabs[0], false);
+      })();
     </script>
   </body>
 </html>
