@@ -6,44 +6,134 @@
     <title>NEXORA — Download</title>
     <meta property="og:type" content="website" />
     <meta property="og:title" content="NEXORA — Download" />
-    <meta property="og:description" content="Windows gaming control hub: game library, booster, hardware monitor, FPS overlay &amp; record studio. Free, local-first, signed auto-updates." />
+    <meta property="og:description" content="Windows gaming control hub: game library, booster, hardware monitor &amp; record studio. Free, local-first, signed auto-updates." />
     <meta property="og:image" content="https://raw.githubusercontent.com/gazahyp/NEXORA/main/brand/open-graph.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="description" content="NEXORA: Windows gaming control hub — hardware monitor, game library booster, optimizer and screen recorder. Free download." />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/gazahyp/NEXORA/main/brand/open-graph.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
       :root {
         color-scheme: dark;
-        --bg: #090c11;
-        --panel: #10151d;
-        --border: #232b38;
-        --text: #e8edf4;
+        --bg: #070a0f;
+        --bg-2: #0b0f16;
+        --panel: #10151e;
+        --panel-2: #141a25;
+        --border: #222b3a;
+        --border-2: #2c3647;
+        --text: #e9eef6;
         --muted: #9aa7b8;
+        --muted-2: #6f7d90;
         --accent: #8b5cf6;
+        --accent-2: #a78bfa;
+        --accent-deep: #6d28d9;
+        --good: #34d399;
+        --radius: 14px;
+        --shadow-lg: 0 24px 70px -20px rgba(0, 0, 0, .75);
       }
-      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html { scroll-behavior: smooth; }
+
       body {
-        font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
-        background: radial-gradient(1200px 600px at 70% -10%, #1b1233 0%, var(--bg) 55%);
+        font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+        background:
+          radial-gradient(1100px 620px at 72% -12%, rgba(139, 92, 246, .16) 0%, transparent 58%),
+          radial-gradient(760px 560px at 8% 8%, rgba(109, 40, 217, .09) 0%, transparent 60%),
+          var(--bg);
         color: var(--text);
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 48px 20px 32px;
+        padding: 40px 20px 28px;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
       }
+
+      /* Focus ring: visible on keyboard nav only (best practice) */
+      :focus-visible {
+        outline: 2px solid var(--accent-2);
+        outline-offset: 3px;
+        border-radius: 8px;
+      }
+
       .logo {
-        font-size: 15px;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
         font-weight: 800;
-        letter-spacing: .38em;
-        color: var(--accent);
-        margin-bottom: 18px;
+        letter-spacing: .4em;
+        color: var(--accent-2);
+        margin-bottom: 26px;
       }
-      h1 { font-size: clamp(28px, 5vw, 44px); line-height: 1.15; text-align: center; max-width: 720px; }
-      h1 span { color: var(--accent); }
-      .sub { color: var(--muted); margin-top: 14px; text-align: center; max-width: 560px; font-size: 16px; }
-      .version { margin-top: 10px; font-size: 13px; color: var(--muted); }
-      .version b { color: var(--text); font-variant-numeric: tabular-nums; }
-      .actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 34px; justify-content: center; }
+      .logo svg { display: block; }
+
+      h1 {
+        font-size: clamp(30px, 5.6vw, 54px);
+        line-height: 1.08;
+        letter-spacing: -.025em;
+        font-weight: 800;
+        text-align: center;
+        max-width: 760px;
+      }
+      h1 .grad {
+        background: linear-gradient(100deg, var(--accent-2) 0%, #c4b5fd 45%, #7c3aed 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+      }
+
+      .sub {
+        color: var(--muted);
+        margin-top: 16px;
+        text-align: center;
+        max-width: 600px;
+        font-size: 16.5px;
+        line-height: 1.6;
+      }
+
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--muted);
+        background: rgba(139, 92, 246, .08);
+        border: 1px solid rgba(139, 92, 246, .28);
+        padding: 5px 12px;
+        border-radius: 999px;
+      }
+      .badge svg { flex: none; color: var(--good); }
+
+      .version {
+        margin-top: 16px;
+        font-size: 13px;
+        color: var(--muted-2);
+        font-variant-numeric: tabular-nums;
+      }
+      .version b { color: var(--accent-2); font-weight: 700; }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 30px;
+        justify-content: center;
+      }
       a.btn {
         display: inline-flex;
         align-items: center;
@@ -53,76 +143,380 @@
         font-size: 15px;
         padding: 14px 26px;
         border-radius: 12px;
-        transition: transform .15s ease, box-shadow .15s ease;
+        transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
       }
+      a.btn svg { flex: none; }
       a.primary {
-        background: linear-gradient(135deg, var(--accent), #6d28d9);
+        background: linear-gradient(135deg, var(--accent) 0%, var(--accent-deep) 100%);
         color: #fff;
-        box-shadow: 0 8px 28px rgba(139, 92, 246, .35);
+        box-shadow: 0 10px 34px -8px rgba(139, 92, 246, .65), 0 0 0 1px rgba(167, 139, 250, .35) inset;
       }
-      a.primary:hover { transform: translateY(-2px); }
+      a.primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 16px 44px -8px rgba(139, 92, 246, .8), 0 0 0 1px rgba(196, 181, 253, .5) inset;
+      }
       a.ghost {
         border: 1px solid var(--border);
         color: var(--text);
         background: var(--panel);
       }
-      a.ghost:hover { border-color: var(--accent); }
-      .features {
-        margin-top: 52px;
+      a.ghost:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+        background: var(--panel-2);
+      }
+
+      /* ---- App window mockup (pure CSS, no image) ---- */
+      .shot {
+        margin-top: 46px;
+        width: 100%;
+        max-width: 940px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, var(--panel-2), var(--panel));
+        border: 1px solid var(--border-2);
+        box-shadow: var(--shadow-lg), 0 0 90px -40px rgba(139, 92, 246, .4);
+        overflow: hidden;
+      }
+      .shot-bar {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 11px 14px;
+        background: rgba(255, 255, 255, .025);
+        border-bottom: 1px solid var(--border);
+      }
+      .dot { width: 10px; height: 10px; border-radius: 50%; }
+      .dot.r { background: #ff5f57; }
+      .dot.y { background: #febc2e; }
+      .dot.g { background: #28c840; }
+      .shot-title {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 11.5px;
+        font-weight: 600;
+        letter-spacing: .14em;
+        color: var(--muted-2);
+      }
+      .shot-body {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+        grid-template-columns: 190px 1fr;
+        min-height: 340px;
+      }
+      .shot-side {
+        padding: 16px 12px;
+        border-right: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        background: rgba(0, 0, 0, .18);
+      }
+      .side-item {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        padding: 8px 10px;
+        border-radius: 9px;
+        font-size: 12.5px;
+        font-weight: 600;
+        color: var(--muted);
+      }
+      .side-item.active {
+        background: rgba(139, 92, 246, .16);
+        color: var(--text);
+        box-shadow: inset 2px 0 0 var(--accent);
+      }
+      .side-ico {
+        width: 16px; height: 16px; flex: none; color: currentColor; opacity: .85;
+      }
+      .shot-main { padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+      .shot-h { font-size: 13px; font-weight: 700; color: var(--text); }
+      .grid-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .gcard {
+        background: rgba(255, 255, 255, .03);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .gcard .k { font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted-2); font-weight: 700; }
+      .gcard .v { font-size: 19px; font-weight: 800; font-variant-numeric: tabular-nums; }
+      .gcard .v.a { color: var(--accent-2); }
+      .gcard .v.g { color: var(--good); }
+      .bars { display: flex; flex-direction: column; gap: 10px; }
+      .bar-row { display: grid; grid-template-columns: 44px 1fr 46px; align-items: center; gap: 10px; font-size: 11px; color: var(--muted); }
+      .bar { height: 7px; border-radius: 99px; background: rgba(255, 255, 255, .07); overflow: hidden; }
+      .bar i {
+        display: block; height: 100%; border-radius: 99px;
+        background: linear-gradient(90deg, var(--accent-deep), var(--accent-2));
+      }
+      .bar i.g { background: linear-gradient(90deg, #059669, var(--good)); }
+      .bar-val { text-align: right; font-variant-numeric: tabular-nums; color: var(--text); font-weight: 600; }
+
+      /* ---- Feature cards ---- */
+      .features {
+        margin-top: 54px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
         gap: 12px;
-        max-width: 860px;
+        max-width: 940px;
         width: 100%;
       }
       .f {
+        position: relative;
         background: var(--panel);
         border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 16px 18px;
+        border-radius: var(--radius);
+        padding: 20px;
         font-size: 14px;
+        transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease, background .2s ease;
       }
-      .f b { display: block; margin-bottom: 4px; font-size: 14.5px; }
-      .f span { color: var(--muted); }
-      footer {
-        margin-top: auto;
-        padding-top: 56px;
+      .f::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: var(--radius);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity .2s ease;
+        background: radial-gradient(320px 140px at 50% 0%, rgba(139, 92, 246, .14), transparent 70%);
+      }
+      .f:hover {
+        transform: translateY(-3px);
+        border-color: rgba(139, 92, 246, .55);
+        background: var(--panel-2);
+        box-shadow: 0 14px 34px -16px rgba(0, 0, 0, .7);
+      }
+      .f:hover::after { opacity: 1; }
+      .f .fi {
+        width: 38px; height: 38px;
+        display: grid; place-items: center;
+        border-radius: 11px;
+        margin-bottom: 12px;
+        color: var(--accent-2);
+        background: rgba(139, 92, 246, .12);
+        border: 1px solid rgba(139, 92, 246, .3);
+      }
+      .f b { display: block; margin-bottom: 5px; font-size: 15px; }
+      .f span { color: var(--muted); line-height: 1.55; }
+
+      .note {
+        margin-top: 20px;
         font-size: 12.5px;
         color: var(--muted);
+        max-width: 640px;
+        text-align: center;
+        line-height: 1.7;
+      }
+      .note code {
+        font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+        font-size: 11.5px;
+        background: rgba(255, 255, 255, .06);
+        border: 1px solid var(--border);
+        padding: 1px 6px;
+        border-radius: 5px;
+        color: var(--accent-2);
+      }
+
+      footer {
+        margin-top: auto;
+        padding-top: 52px;
+        font-size: 12.5px;
+        color: var(--muted-2);
         text-align: center;
         line-height: 1.9;
       }
-      footer a { color: var(--muted); }
-      .note { margin-top: 18px; font-size: 12.5px; color: var(--muted); max-width: 620px; text-align: center; }
+      footer a { color: var(--muted); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color .15s ease; }
+      footer a:hover { border-bottom-color: var(--accent); }
+
+      /* ---- One-shot hero entrance (runs once, not on every scroll) ---- */
+      .rise { opacity: 0; transform: translateY(14px); animation: rise .6s cubic-bezier(.2, .8, .3, 1) forwards; }
+      .d1 { animation-delay: .05s; }
+      .d2 { animation-delay: .15s; }
+      .d3 { animation-delay: .25s; }
+      .d4 { animation-delay: .35s; }
+      .d5 { animation-delay: .48s; }
+      @keyframes rise { to { opacity: 1; transform: none; } }
+
+      @media (max-width: 760px) {
+        .shot-body { grid-template-columns: 1fr; min-height: 0; }
+        .shot-side { flex-direction: row; flex-wrap: wrap; border-right: none; border-bottom: 1px solid var(--border); padding: 10px; }
+        .side-item { padding: 6px 9px; }
+        .grid-cards { grid-template-columns: repeat(2, 1fr); }
+        .bar-row { grid-template-columns: 40px 1fr 42px; }
+      }
+      @media (max-width: 480px) {
+        body { padding: 28px 14px 22px; }
+        h1 { font-size: clamp(26px, 8.4vw, 40px); }
+        .sub { font-size: 15px; }
+        a.btn { width: 100%; justify-content: center; padding: 13px 18px; }
+        .grid-cards { grid-template-columns: 1fr 1fr; }
+        .gcard .v { font-size: 16px; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after {
+          animation-duration: .001ms !important;
+          animation-delay: 0ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: .001ms !important;
+        }
+        .rise { opacity: 1; transform: none; }
+      }
     </style>
   </head>
   <body>
-    <div class="logo">NEXORA</div>
-    <h1>Your PC. Your games.<br /><span>Full control.</span></h1>
-    <p class="sub">
-      Windows gaming control hub: live hardware monitor, game library with booster,
-      safe optimizer, overlay FPS and built-in screen recorder. Free, offline-first,
-      with automatic updates.
-    </p>
-    <p class="version">Latest release: <b id="ver">…</b></p>
+    <div class="logo rise d1">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2.6 21 12l-9 9.4L3 12 12 2.6Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+        <path d="M12 7.4 16.6 12 12 16.6 7.4 12 12 7.4Z" fill="currentColor"/>
+      </svg>
+      NEXORA
+    </div>
 
-    <div class="actions">
-      <a class="btn primary" id="dlSetup" href="#">⬇ Download Setup (.exe)</a>
-      <a class="btn ghost" id="dlZip" href="#">Portable (.zip)</a>
+    <h1 class="rise d1">Your PC. Your games.<br /><span class="grad">Full control.</span></h1>
+    <p class="sub rise d2">
+      Windows gaming control hub: live hardware monitor, game library with booster,
+      safe optimizer, and built-in screen recorder. Everything local, everything yours.
+    </p>
+
+    <div class="badges rise d2">
+      <span class="badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        100% Free
+      </span>
+      <span class="badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Offline-first
+      </span>
+      <span class="badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Automatic updates
+      </span>
+      <span class="badge">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        SHA-256 checksums
+      </span>
+    </div>
+
+    <p class="version rise d2">Latest release: <b id="ver">…</b></p>
+
+    <div class="actions rise d3">
+      <a class="btn primary" id="dlSetup" href="https://github.com/gazahyp/NEXORA/releases/latest" target="_blank" rel="noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3v11m0 0 4.5-4.5M12 14l-4.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 17.5V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Download Setup (.exe)
+      </a>
+      <a class="btn ghost" id="dlZip" href="https://github.com/gazahyp/NEXORA/releases/latest" target="_blank" rel="noreferrer">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M12 3v11m0 0 4.5-4.5M12 14l-4.5-4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 17.5V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        Portable (.zip)
+      </a>
       <a class="btn ghost" href="https://github.com/gazahyp/NEXORA/releases" target="_blank" rel="noreferrer">All releases</a>
     </div>
 
-    <div class="features">
-      <div class="f"><b>🎮 Game Library Hub</b><span>Steam, Epic, Riot, GOG & more — artwork, profiles, one-click launch</span></div>
-      <div class="f"><b>🚀 Game Booster</b><span>Live optimization while gaming, with honest reversible tweaks</span></div>
-      <div class="f"><b>📊 Hardware Monitor</b><span>CPU / GPU / RAM / temps / fans at 1 Hz, overlay FPS</span></div>
-      <div class="f"><b>🎬 Record Studio</b><span>FFmpeg screen recording with NVENC / AMF / QuickSync</span></div>
+    <!-- App preview: pure-CSS window mockup (no screenshot asset exists yet) -->
+    <div class="shot rise d4" role="img" aria-label="NEXORA application window: sidebar navigation, hardware stats and live sensor bars">
+      <div class="shot-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="shot-title">NEXORA</span>
+      </div>
+      <div class="shot-body">
+        <div class="shot-side">
+          <div class="side-item active">
+            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><path d="M4 13h6V4H4v9Zm10 7h6v-9h-6v9ZM4 20h6v-4H4v4Zm10-11h6V4h-6v5Z" fill="currentColor"/></svg>
+            Dashboard
+          </div>
+          <div class="side-item">
+            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><path d="M4 19V5m0 14h16M8 15V9m4 6V6m4 9v-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+            Performance
+          </div>
+          <div class="side-item">
+            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10v16H6.5A2.5 2.5 0 0 1 4 17.5v-11ZM14 4h3.5A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20H14V4Z" stroke="currentColor" stroke-width="1.7"/></svg>
+            Library
+          </div>
+          <div class="side-item">
+            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            Booster
+          </div>
+          <div class="side-item">
+            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2.5" stroke="currentColor" stroke-width="1.7"/><rect x="8" y="8" width="4" height="4" rx="1" fill="currentColor"/><path d="M14 8h2M14 12h2M8 14h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            Hardware
+          </div>
+          <div class="side-item">
+            <svg class="side-ico" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="2.2" fill="currentColor"/></svg>
+            Record Studio
+          </div>
+        </div>
+        <div class="shot-main">
+          <div class="shot-h">Hardware Monitor · live sensors</div>
+          <div class="grid-cards">
+            <div class="gcard"><span class="k">CPU</span><span class="v a">47%</span><div class="bar"><i style="width:47%"></i></div></div>
+            <div class="gcard"><span class="k">GPU</span><span class="v g">62%</span><div class="bar"><i class="g" style="width:62%"></i></div></div>
+            <div class="gcard"><span class="k">RAM</span><span class="v">9.4 GB</span><div class="bar"><i style="width:58%"></i></div></div>
+          </div>
+          <div class="bars">
+            <div class="bar-row"><span>CPU °C</span><div class="bar"><i style="width:44%"></i></div><span class="bar-val">49°</span></div>
+            <div class="bar-row"><span>GPU °C</span><div class="bar"><i class="g" style="width:56%"></i></div><span class="bar-val">57°</span></div>
+            <div class="bar-row"><span>Fan</span><div class="bar"><i style="width:38%"></i></div><span class="bar-val">1842</span></div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <p class="note">
-      Windows 10/11 x64. Unsigned build — SmartScreen may warn “Unknown publisher”;
-      click “More info → Run anyway”. SHA-256 checksums are published with every
-      release on the releases page.
+    <div class="features rise d5">
+      <div class="f">
+        <div class="fi">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4H10v16H6.5A2.5 2.5 0 0 1 4 17.5v-11ZM14 4h3.5A2.5 2.5 0 0 1 20 6.5v11A2.5 2.5 0 0 1 17.5 20H14V4Z" stroke="currentColor" stroke-width="1.7"/>
+          </svg>
+        </div>
+        <b>Game Library Hub</b>
+        <span>Steam, Epic, Riot, GOG &amp; more — artwork, profiles, one-click launch.</span>
+      </div>
+      <div class="f">
+        <div class="fi">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M13 2 4.5 13.5H11l-1 8.5 8.5-11.5H12l1-8.5Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <b>Game Booster</b>
+        <span>Live optimization while gaming, with honest, reversible tweaks.</span>
+      </div>
+      <div class="f">
+        <div class="fi">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="2.5" stroke="currentColor" stroke-width="1.7"/>
+            <rect x="8" y="8" width="4" height="4" rx="1" fill="currentColor"/>
+            <path d="M14 8h2M14 12h2M8 14h8" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <b>Hardware Monitor</b>
+        <span>CPU / GPU / RAM / temps / fans sampled at 1 Hz, logged to disk.</span>
+      </div>
+      <div class="f">
+        <div class="fi">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.7"/>
+            <circle cx="12" cy="12" r="2.2" fill="currentColor"/>
+          </svg>
+        </div>
+        <b>Record Studio</b>
+        <span>FFmpeg screen recording with NVENC / AMF / QuickSync encoders.</span>
+      </div>
+    </div>
+
+    <p class="note rise d5">
+      Windows 10/11 x64. Unsigned build — SmartScreen may warn “Unknown publisher”:
+      choose <b>More info</b>, then <b>Run anyway</b>. Every release ships
+      <b>SHA-256 checksums</b> (see <code>SHA256SUMS.txt</code> on the releases page)
+      so you can verify integrity with <code>Get-FileHash</code>.
     </p>
 
     <footer>
@@ -133,40 +527,60 @@
     </footer>
 
     <script>
-      // Fill the buttons from the release manifest. Order: same-origin copy
-      // (kept in step with releases by scripts/publish-update.mjs), then the
-      // CORS-enabled GitHub API, then the raw release asset as last resort.
+      // Resolve the latest release + download links. Order: same-origin manifest
+      // (kept in step by scripts/publish-update.mjs), then the CORS-enabled
+      // GitHub API, then fail open to the releases page. Never throw.
       const BASE = "https://github.com/gazahyp/NEXORA";
       const SOURCES = [
         { url: "latest.json", fromApi: false },
         { url: "https://api.github.com/repos/gazahyp/NEXORA/releases/latest", fromApi: true },
         { url: BASE + "/releases/latest/download/latest.json", fromApi: false },
       ];
+
+      const verEl = document.getElementById("ver");
+      const setupEl = document.getElementById("dlSetup");
+      const zipEl = document.getElementById("dlZip");
+
       function apply(m) {
-        const v = m.version || "";
+        const v = String(m.version || m.tag_name || "").replace(/^v/, "");
         if (!v) return false;
-        document.getElementById("ver").textContent = "v" + v;
+        verEl.textContent = "v" + v;
         const base = BASE + "/releases/download/v" + v;
-        document.getElementById("dlSetup").href =
-          (m.platforms?.["windows-x86_64"]?.url) || base + "/NEXORA-Setup-" + v + ".exe";
-        document.getElementById("dlZip").href = base + "/NEXORA-Portable-" + v + ".zip";
+        setupEl.href =
+          m.platforms?.["windows-x86_64"]?.url || base + "/NEXORA-Setup-" + v + ".exe";
+        zipEl.href = base + "/NEXORA-Portable-" + v + ".zip";
         return true;
       }
+
+      function failOpen() {
+        verEl.textContent = "see releases page";
+        setupEl.href = BASE + "/releases/latest";
+        zipEl.href = BASE + "/releases/latest";
+      }
+
       (async () => {
         for (const s of SOURCES) {
           try {
-            const r = await fetch(s.url);
+            const r = await fetch(s.url, { cache: "no-store" });
             if (!r.ok) continue;
             const j = await r.json();
-            if (apply(s.fromApi ? { version: String(j.tag_name || "").replace(/^v/, ""), } : j)) return;
+            if (s.fromApi) {
+              // Prefer real asset names from the API when available — covers
+              // naming changes without a page edit.
+              const setup = j.assets?.find((a) => /\.exe$/i.test(a.name));
+              const zip = j.assets?.find((a) => /portable.*\.zip$/i.test(a.name));
+              if (apply({ version: j.tag_name })) {
+                if (setup) setupEl.href = setup.browser_download_url;
+                if (zip) zipEl.href = zip.browser_download_url;
+                return;
+              }
+            } else if (apply(j)) return;
           } catch {
-            /* next source */
+            /* try next source */
           }
         }
-        document.getElementById("ver").textContent = "see releases page";
-        document.getElementById("dlSetup").href = BASE + "/releases/latest";
-        document.getElementById("dlZip").href = BASE + "/releases/latest";
-      })();
+        failOpen();
+      })().catch(failOpen);
     </script>
   </body>
 </html>
