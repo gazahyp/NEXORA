@@ -200,7 +200,7 @@
       .shot-body {
         display: grid;
         grid-template-columns: 190px 1fr;
-        min-height: 340px;
+        height: 420px;
       }
       .shot-side {
         padding: 16px 12px;
@@ -209,6 +209,7 @@
         flex-direction: column;
         gap: 6px;
         background: rgba(0, 0, 0, .18);
+        min-height: 0;
       }
       .side-item {
         display: flex;
@@ -236,9 +237,19 @@
       .side-ico {
         width: 16px; height: 16px; flex: none; color: currentColor; opacity: .85;
       }
+      /* Konten kanan: wadah tunggal untuk semua panel.
+         Panel non-aktif HARUS hilang total — proteksi !important di sini
+         mengalahkan display:flex di bawah untuk elemen beratribut hidden. */
+      .shot-content {
+        position: relative;
+        min-width: 0;
+        min-height: 0;
+        overflow: auto;
+      }
+      .shot-main[hidden] { display: none !important; }
       .shot-main { padding: 18px; display: flex; flex-direction: column; gap: 14px; }
       .shot-h { font-size: 13px; font-weight: 700; color: var(--text); }
-      .grid-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .grid-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
       .gcard {
         background: rgba(255, 255, 255, .03);
         border: 1px solid var(--border);
@@ -249,7 +260,7 @@
         gap: 8px;
       }
       .gcard .k { font-size: 10.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted-2); font-weight: 700; }
-      .gcard .v { font-size: 19px; font-weight: 800; font-variant-numeric: tabular-nums; }
+      .gcard .v { font-size: 17.5px; font-weight: 800; font-variant-numeric: tabular-nums; white-space: nowrap; }
       .gcard .v.a { color: var(--accent-2); }
       .gcard .v.g { color: var(--good); }
       .bars { display: flex; flex-direction: column; gap: 10px; }
@@ -402,9 +413,13 @@
       @keyframes rise { to { opacity: 1; transform: none; } }
 
       @media (max-width: 760px) {
-        .shot-body { grid-template-columns: 1fr; min-height: 0; }
-        .shot-side { flex-direction: row; flex-wrap: wrap; border-right: none; border-bottom: 1px solid var(--border); padding: 10px; }
+        .shot-body { grid-template-columns: 1fr; height: auto; }
+        .shot-side {
+          flex-direction: row; flex-wrap: wrap; border-right: none;
+          border-bottom: 1px solid var(--border); padding: 10px;
+        }
         .side-item { padding: 6px 9px; width: auto; }
+        .shot-content { min-height: 320px; }
         .grid-cards { grid-template-columns: repeat(2, 1fr); }
         .bar-row { grid-template-columns: 40px 1fr 42px; }
         .lib-grid { grid-template-columns: repeat(3, 1fr); }
@@ -417,6 +432,7 @@
         .grid-cards { grid-template-columns: 1fr 1fr; }
         .gcard .v { font-size: 16px; }
         .lib-grid { grid-template-columns: repeat(2, 1fr); }
+        .shot-content { min-height: 360px; }
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -516,6 +532,7 @@
           </button>
         </div>
 
+        <div class="shot-content">
         <div class="shot-main" role="tabpanel" id="panel-dashboard" aria-labelledby="tab-dashboard">
           <div class="shot-h">Dashboard · overview</div>
           <div class="grid-cards">
@@ -531,7 +548,7 @@
         </div>
 
         <div class="shot-main" role="tabpanel" id="panel-performance" aria-labelledby="tab-performance" hidden>
-          <div class="shot-h">Performance · in-game overlay</div>
+          <div class="shot-h">Performance · live stats</div>
           <div class="grid-cards">
             <div class="gcard"><span class="k">Avg FPS</span><span class="v a">142</span><div class="bar"><i style="width:71%"></i></div></div>
             <div class="gcard"><span class="k">1% low</span><span class="v">118</span><div class="bar"><i style="width:59%"></i></div></div>
@@ -614,15 +631,19 @@
         <div class="shot-main" role="tabpanel" id="panel-hardware" aria-labelledby="tab-hardware" hidden>
           <div class="shot-h">Hardware Monitor · live sensors · 1 Hz</div>
           <div class="grid-cards">
-            <div class="gcard"><span class="k">CPU</span><span class="v a">47%</span><div class="bar"><i style="width:47%"></i></div></div>
-            <div class="gcard"><span class="k">GPU</span><span class="v g">62%</span><div class="bar"><i class="g" style="width:62%"></i></div></div>
-            <div class="gcard"><span class="k">RAM</span><span class="v">9.4 GB</span><div class="bar"><i style="width:58%"></i></div></div>
+            <div class="gcard"><span class="k">VRAM</span><span class="v a">6.1 GB</span><div class="bar"><i style="width:48%"></i></div></div>
+            <div class="gcard"><span class="k">Fan CPU</span><span class="v">1842</span><div class="bar"><i style="width:38%"></i></div></div>
+            <div class="gcard"><span class="k">Fan GPU</span><span class="v g">2104</span><div class="bar"><i class="g" style="width:44%"></i></div></div>
           </div>
           <div class="bars">
-            <div class="bar-row"><span>CPU °C</span><div class="bar"><i style="width:44%"></i></div><span class="bar-val">49°</span></div>
-            <div class="bar-row"><span>GPU °C</span><div class="bar"><i class="g" style="width:56%"></i></div><span class="bar-val">57°</span></div>
-            <div class="bar-row"><span>Fan</span><div class="bar"><i style="width:38%"></i></div><span class="bar-val">1842</span></div>
+            <div class="bar-row"><span>Core 0</span><div class="bar"><i style="width:52%"></i></div><span class="bar-val">52°</span></div>
+            <div class="bar-row"><span>Core 1</span><div class="bar"><i style="width:58%"></i></div><span class="bar-val">55°</span></div>
+            <div class="bar-row"><span>Core 2</span><div class="bar"><i class="g" style="width:61%"></i></div><span class="bar-val">57°</span></div>
+            <div class="bar-row"><span>Core 3</span><div class="bar"><i style="width:49%"></i></div><span class="bar-val">50°</span></div>
+            <div class="bar-row"><span>GPU</span><div class="bar"><i class="g" style="width:56%"></i></div><span class="bar-val">57°</span></div>
+            <div class="bar-row"><span>Hotspot</span><div class="bar"><i style="width:66%"></i></div><span class="bar-val">68°</span></div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -739,7 +760,7 @@
           document.querySelectorAll(".shot-side [role='tab']")
         );
         const panels = Array.prototype.slice.call(
-          document.querySelectorAll(".shot-main[role='tabpanel']")
+          document.querySelectorAll(".shot-content [role='tabpanel']")
         );
         if (!tabs.length) return;
 
