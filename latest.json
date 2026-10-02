@@ -1,11 +1,11 @@
 {
-  "version": "1.0.30",
-  "notes": "NEXORA 1.0.30",
-  "pub_date": "2026-09-13T21:59:22.963Z",
+  "version": "1.0.33",
+  "notes": "NEXORA 1.0.33\n\n**Added**\n\n- Optimizer overview redesigned: friendly power-plan names, live/scan source\n- Artwork matching is smarter: fuzzy title matching, a 7-day negative cache so\n- Library supports paginated grids for large catalogs.\n\n**Changed**\n\n- Gaming/power/GPU rows now render in a unified grid with overflow control.\n\n**Removed**\n\n- The Overlay feature is gone: sidebar entry, tray menu, i18n strings, window",
+  "pub_date": "2026-10-02T23:13:21.194Z",
   "platforms": {
     "windows-x86_64": {
-      "url": "https://github.com/gazahyp/NEXORA/releases/download/v1.0.30/NEXORA-Setup-1.0.30.exe",
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZktVdWJzYVVEQjdBMjkrTlU1YWc1ZnQ0d2hxZkN5ZTVaWHRacm94dTBLQmlGM3M4dlZrV3FJemlibjg3SlBDQmNHMlBDbXlubWN0ekFmQ3VURFFaVmpDa2JKbGpJa0FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MzM2NjgxCWZpbGU6TkVYT1JBXzEuMC4zMF94NjQtc2V0dXAuZXhlClNjV1dqR3EySjBCL2l6czFMT2hSSWhlbzVHb3BZZ2JjUG8vemNoeFEyNXhmQ09xNkxSbDA4azdkU05TR3drSVlRRHJNR1F6ZVBEVlh5dy8rdFJySEFBPT0K"
+      "url": "https://github.com/gazahyp/NEXORA/releases/download/v1.0.33/NEXORA-Setup-1.0.33.exe",
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVTZktVdWJzYVVEQjR2d2tPM1pnR21OTkdaNWdSQys1ZWUwRHp0WmRTSG5FR3JSaWxjUkZjdmhMYmxoWU5hSlZoTW1XRmpqUExRN0tOZXIrcUFLeWZNdmk2MnVVckNBMlFZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkwOTgyNzUyCWZpbGU6TkVYT1JBXzEuMC4zM194NjQtc2V0dXAuZXhlCnVJNVZDRzhHMUNCK3RQVHZUUXR1Y0w3Q1lOdmFMQ3Q1NlR4Nklmc2NPU2duV3pTckQxOExOZ0FaV05XOEtNM3pOR1lSQ2M4MENOVFh3dXd5UTlxd0RRPT0K"
     }
   }
 }
