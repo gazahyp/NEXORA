@@ -100,10 +100,10 @@ minisign signature        2. build latest.json
                           3. VERIFY signature against the exact bytes
                              (Ed25519 over BLAKE2b-512, same scheme as
                               the client) — abort on mismatch
-                          4. upload the release artifacts the registry
-                             publishers do not cover (.exe, .msi, .zip,
-                             SHA256SUMS.txt, RELEASE-INFO.md) plus
-                             latest.json as GitHub Release v<v>,
+                          4. upload the artifact set prepared by
+                             `npm run release` (.exe, .msi, .zip,
+                             SHA256SUMS.txt, RELEASE-INFO.md) together
+                             with latest.json as GitHub Release v<v>,
                              marked "latest"
                           5. commit the same manifest into latest.json at
                              the repo root — the same-origin mirror the
