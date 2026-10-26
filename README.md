@@ -95,14 +95,19 @@ which is **atomic and self-verifying**:
 ```text
 npm run release            npm run publish:update
 ─────────────────         ─────────────────────────────────────────
-Tauri build (NSIS+MSI) →  1. locate signed bundle (installer + .sig)
+Tauri build (NSIS)     →  1. locate signed bundle (installer + .sig)
 minisign signature        2. build latest.json
                           3. VERIFY signature against the exact bytes
                              (Ed25519 over BLAKE2b-512, same scheme as
                               the client) — abort on mismatch
-                          4. upload NEXORA-Setup-<v>.exe + latest.json
-                             as GitHub Release v<v>, marked "latest"
-                          5. sync the Pages latest.json mirror
+                          4. upload the artifact set prepared by
+                             `npm run release` (.exe, .msi, .zip,
+                             SHA256SUMS.txt, RELEASE-INFO.md) together
+                             with latest.json as GitHub Release v<v>,
+                             marked "latest"
+                          5. commit the same manifest into latest.json at
+                             the repo root — the same-origin mirror the
+                             landing page reads
 ```
 
 Guarantees:
