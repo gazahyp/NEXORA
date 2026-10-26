@@ -110,11 +110,6 @@ minisign signature        2. build latest.json
                              landing page reads
 ```
 
-> GitHub renders release bodies through its own template, so the notes
-> in-tree and the published page are never byte-identical. Write release
-> notes as complete blocks — a blank line between every item and between
-> headings and items — then re-check the published body afterwards.
-
 Guarantees:
 
 - **Idempotent** — republishing the same version deletes and recreates the
