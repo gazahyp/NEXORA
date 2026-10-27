@@ -5,12 +5,12 @@
 <br/>
 
 <!-- Live badges: version + download counts follow this repo's releases. -->
-<a href="https://github.com/gazahyp/NEXORA/releases/latest"><img src="https://img.shields.io/github/v/release/gazahyp/NEXORA?style=for-the-badge&label=RELEASE&labelColor=0A0713&color=A855F7" alt="Latest release" /></a>
-<a href="https://github.com/gazahyp/NEXORA/releases"><img src="https://img.shields.io/github/downloads/gazahyp/NEXORA/total?style=for-the-badge&label=DOWNLOADS&labelColor=0A0713&color=22D3EE" alt="Total downloads" /></a>
-<a href="https://gazahyp.github.io/NEXORA/"><img src="https://img.shields.io/badge/DOWNLOAD-PAGE-22D3EE?style=for-the-badge&labelColor=0A0713&logo=githubpages&logoColor=22D3EE" alt="Download page" /></a>
+<a href="https://github.com/gazahyp/NEXORA/releases/latest"><img src="https://img.shields.io/github/v/release/gazahyp/NEXORA?style=for-the-badge&label=RELEASE&labelColor=0A0713&color=6D28D9" alt="Latest release" /></a>
+<a href="https://github.com/gazahyp/NEXORA/releases"><img src="https://img.shields.io/github/downloads/gazahyp/NEXORA/total?style=for-the-badge&label=DOWNLOADS&labelColor=0A0713&color=0E7490" alt="Total downloads" /></a>
+<a href="https://gazahyp.github.io/NEXORA/"><img src="https://img.shields.io/badge/DOWNLOAD-PAGE-0E7490?style=for-the-badge&labelColor=0A0713&logo=githubpages&logoColor=22D3EE" alt="Download page" /></a>
 
-<a href="https://github.com/gazahyp/NEXORA/releases/latest/download/latest.json"><img src="https://img.shields.io/badge/UPDATER-latest.json-A855F7?style=flat-square&labelColor=0A0713" alt="Updater endpoint" /></a>
-<img src="https://img.shields.io/badge/PLATFORM-Windows%20x64-22D3EE?style=flat-square&labelColor=0A0713" alt="Platform" />
+<a href="https://github.com/gazahyp/NEXORA/releases/latest/download/latest.json"><img src="https://img.shields.io/badge/UPDATER-latest.json-6D28D9?style=flat-square&labelColor=0A0713" alt="Updater endpoint" /></a>
+<img src="https://img.shields.io/badge/PLATFORM-Windows%20x64-0E7490?style=flat-square&labelColor=0A0713" alt="Platform" />
 <img src="https://img.shields.io/badge/LICENSE-Freeware-6F7C93?style=flat-square&labelColor=0A0713" alt="License: freeware" />
 <a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/CONTRIBUTING-guidelines-6F7C93?style=flat-square&labelColor=0A0713" alt="Contributing" /></a>
 
@@ -67,7 +67,7 @@ typed Tauri IPC. Free, local-first, with signed auto-updates.
 
 <div align="center">
 
-<a href="https://gazahyp.github.io/NEXORA/"><img src="https://img.shields.io/badge/DOWNLOAD-NEXORA%20for%20Windows-22D3EE?style=for-the-badge&labelColor=0A0713&logo=windows&logoColor=22D3EE" alt="Download NEXORA" /></a>
+<a href="https://gazahyp.github.io/NEXORA/"><img src="https://img.shields.io/badge/DOWNLOAD-NEXORA%20for%20Windows-0E7490?style=for-the-badge&labelColor=0A0713&logo=windows&logoColor=22D3EE" alt="Download NEXORA" /></a>
 
 </div>
 
