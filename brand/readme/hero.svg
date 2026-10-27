@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300" role="img" aria-label="NEXORA — Windows gaming control hub. Release and auto-update host.">
+  <!-- Self-contained dark HUD banner for the NEXORA release/update host repo.
+       Carries its own background plus an inline copy of the brand logotype
+       geometry, so it renders identically on both GitHub themes with no
+       external request. Designed at 900px = GitHub's README column width. -->
+  <defs>
+    <linearGradient id="nBrand" x1="110" y1="90" x2="420" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A855F7"/>
+      <stop offset="0.45" stop-color="#7C3AED"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <linearGradient id="nBolt" x1="256" y1="120" x2="256" y2="392" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#22D3EE"/>
+      <stop offset="0.5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#C026D3"/>
+    </linearGradient>
+    <linearGradient id="nText" x1="300" y1="0" x2="880" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F5F3FF"/>
+      <stop offset="0.55" stop-color="#E2E8F0"/>
+      <stop offset="1" stop-color="#BFDBFE"/>
+    </linearGradient>
+    <linearGradient id="nRule" x1="40" y1="0" x2="860" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A855F7" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#22D3EE" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="nTick" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A855F7" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#A855F7" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="nGlow1" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="26"/></filter>
+    <filter id="nGlow2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="18"/></filter>
+    <filter id="nGlow3" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="9"/></filter>
+    <radialGradient id="nHalo" cx="0.12" cy="0.1" r="0.9">
+      <stop offset="0" stop-color="#7C3AED" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="nGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M50 0 H0 V50" fill="none" stroke="#161B28" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="900" height="300" fill="#0A0713"/>
+  <rect width="900" height="300" fill="url(#nGrid)"/>
+  <rect width="900" height="300" fill="url(#nHalo)"/>
+
+  <!-- HUD corner brackets -->
+  <g fill="none" stroke="#262E3F" stroke-width="2">
+    <path d="M20 50 V20 H50"/>
+    <path d="M880 250 V280 H850"/>
+  </g>
+  <path d="M20 50 V20 H50" fill="none" stroke="#A855F7" stroke-width="3"/>
+  <path d="M880 250 V280 H850" fill="none" stroke="#22D3EE" stroke-width="3"/>
+
+  <!-- Top strip -->
+  <text x="40" y="42" font-family="Consolas, 'Courier New', monospace" font-size="12" letter-spacing="3" fill="#6F7C93">// RELEASE + AUTO-UPDATE HOST</text>
+  <text x="860" y="42" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" letter-spacing="3" fill="#6F7C93">WINDOWS x64</text>
+  <path d="M40 56 H860" stroke="url(#nRule)" stroke-width="1.5"/>
+
+  <!-- Brand mark, inlined from brand/nexora-mark-glow.svg geometry -->
+  <g transform="translate(40 78) scale(0.35)">
+    <g opacity="0.8">
+      <path d="M170 138 L230 190 L230 322 L170 374 Z" fill="#8B5CF6" filter="url(#nGlow2)"/>
+      <path d="M282 190 L342 138 L342 374 L282 322 Z" fill="#3B82F6" filter="url(#nGlow2)"/>
+      <path d="M256 128 L184 272 L236 272 L200 384 L328 228 L272 228 L312 128 Z" fill="#22D3EE" filter="url(#nGlow1)"/>
+    </g>
+    <path d="M170 138 L230 190 L230 322 L170 374 Z" fill="url(#nBrand)" filter="url(#nGlow3)"/>
+    <path d="M282 190 L342 138 L342 374 L282 322 Z" fill="url(#nBrand)" filter="url(#nGlow3)"/>
+    <path d="M256 128 L184 272 L236 272 L200 384 L328 228 L272 228 L312 128 Z" fill="url(#nBolt)" filter="url(#nGlow3)"/>
+    <path d="M170 138 L230 190 L230 322 L170 374 Z" fill="url(#nBrand)"/>
+    <path d="M282 190 L342 138 L342 374 L282 322 Z" fill="url(#nBrand)"/>
+    <path d="M256 128 L184 272 L236 272 L200 384 L328 228 L272 228 L312 128 Z" fill="url(#nBolt)"/>
+  </g>
+
+  <!-- Wordmark, stroke-constructed from brand/nexora-logotype-dark.svg paths -->
+  <g transform="translate(268 120) scale(0.245)">
+    <g filter="url(#nGlow3)" opacity="0.5" fill="none" stroke="#8B5CF6" stroke-width="30">
+      <path d="M0 310 L0 110 L130 310 L130 110"/>
+      <path transform="translate(176 0)" d="M130 110 L0 110 L0 310 L130 310 M0 210 L104 210"/>
+      <path transform="translate(352 0)" d="M0 110 L130 310 M130 110 L0 310"/>
+      <path transform="translate(528 0)" d="M104 110 L26 110 Q0 110 0 136 L0 284 Q0 310 26 310 L104 310 Q130 310 130 284 L130 136 Q130 110 104 110"/>
+      <path transform="translate(704 0)" d="M0 310 L0 110 L92 110 Q130 110 130 152 L130 168 Q130 210 92 210 L0 210 M78 210 L130 310"/>
+      <path transform="translate(880 0)" d="M0 310 L52 110 L78 110 L130 310 M26 232 L104 232"/>
+    </g>
+    <g fill="none" stroke="url(#nText)" stroke-width="30" stroke-linecap="square" stroke-linejoin="miter">
+      <path d="M0 310 L0 110 L130 310 L130 110"/>
+      <path transform="translate(176 0)" d="M130 110 L0 110 L0 310 L130 310 M0 210 L104 210"/>
+      <path transform="translate(352 0)" d="M0 110 L130 310 M130 110 L0 310"/>
+      <path transform="translate(528 0)" d="M104 110 L26 110 Q0 110 0 136 L0 284 Q0 310 26 310 L104 310 Q130 310 130 284 L130 136 Q130 110 104 110"/>
+      <path transform="translate(704 0)" d="M0 310 L0 110 L92 110 Q130 110 130 152 L130 168 Q130 210 92 210 L0 210 M78 210 L130 310"/>
+      <path transform="translate(880 0)" d="M0 310 L52 110 L78 110 L130 310 M26 232 L104 232"/>
+    </g>
+    <path d="M2 352 L1010 352" stroke="url(#nBolt)" stroke-width="10" stroke-linecap="round" opacity="0.85"/>
+  </g>
+
+  <!-- Copy -->
+  <text x="268" y="100" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="19" font-weight="600" fill="#F3F5F9">Windows gaming control hub</text>
+  <text x="268" y="242" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14.5" fill="#A6B0C2">Every installed client checks, verifies and updates from here.</text>
+
+  <!-- Endpoint ticker -->
+  <path d="M40 264 H860" stroke="url(#nTick)" stroke-width="1"/>
+  <text x="40" y="288" font-family="Consolas, 'Courier New', monospace" font-size="11.5" letter-spacing="1.4" fill="#22D3EE">github.com/gazahyp/NEXORA/releases/latest/download/latest.json</text>
+  <text x="860" y="288" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="11.5" letter-spacing="2" fill="#6F7C93">MINISIGN &#183; ED25519</text>
+</svg>

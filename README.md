@@ -1,28 +1,92 @@
 <div align="center">
 
-<img src="brand/nexora-mark-glow.svg" alt="NEXORA" width="120" />
+<img src="brand/readme/hero.svg" width="900" alt="NEXORA — Windows gaming control hub. Release and auto-update host." />
 
-<pre>
-███╗   ██╗███████╗██╗  ██╗ ██████╗ ██████╗  █████╗ 
-████╗  ██║██╔════╝╚██╗██╔╝██╔═══██╗██╔══██╗██╔══██╗
-██╔██╗ ██║█████╗   ╚███╔╝ ██║   ██║██████╔╝███████║
-██║╚██╗██║██╔══╝   ██╔██╗ ██║   ██║██╔══██╗██╔══██║
-██║ ╚████║███████╗██╔╝ ██╗╚██████╔╝██║  ██║██║  ██║
-╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-</pre>
+<br/>
 
-**Update infrastructure for NEXORA — the Windows gaming control hub**
+<!-- Live badges: version + download counts follow this repo's releases. -->
+<a href="https://github.com/gazahyp/NEXORA/releases/latest"><img src="https://img.shields.io/github/v/release/gazahyp/NEXORA?style=for-the-badge&label=RELEASE&labelColor=0A0713&color=6D28D9" alt="Latest release" /></a>
+<a href="https://github.com/gazahyp/NEXORA/releases"><img src="https://img.shields.io/github/downloads/gazahyp/NEXORA/total?style=for-the-badge&label=DOWNLOADS&labelColor=0A0713&color=0E7490" alt="Total downloads" /></a>
+<a href="https://gazahyp.github.io/NEXORA/"><img src="https://img.shields.io/badge/DOWNLOAD-PAGE-0E7490?style=for-the-badge&labelColor=0A0713&logo=githubpages&logoColor=22D3EE" alt="Download page" /></a>
 
-[![Latest release](https://img.shields.io/github/v/release/gazahyp/NEXORA?label=latest&color=8b5cf6)](https://github.com/gazahyp/NEXORA/releases/latest)
-[![Updater endpoint](https://img.shields.io/badge/updater-latest.json-16a34a)](https://github.com/gazahyp/NEXORA/releases/latest/download/latest.json)
-[![Download page](https://img.shields.io/badge/download-page-2563eb)](https://gazahyp.github.io/NEXORA/)
-[![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078d4)](#supported-platforms)
-[![License: Freeware](https://img.shields.io/badge/license-freeware-orange)](LICENSE)
-[![Contributing](https://img.shields.io/badge/contributing-guidelines-6b7280)](CONTRIBUTING.md)
+<a href="https://github.com/gazahyp/NEXORA/releases/latest/download/latest.json"><img src="https://img.shields.io/badge/UPDATER-latest.json-6D28D9?style=flat-square&labelColor=0A0713" alt="Updater endpoint" /></a>
+<img src="https://img.shields.io/badge/PLATFORM-Windows%20x64-0E7490?style=flat-square&labelColor=0A0713" alt="Platform" />
+<img src="https://img.shields.io/badge/LICENSE-Freeware-6F7C93?style=flat-square&labelColor=0A0713" alt="License: freeware" />
+<a href="CONTRIBUTING.md"><img src="https://img.shields.io/badge/CONTRIBUTING-guidelines-6F7C93?style=flat-square&labelColor=0A0713" alt="Contributing" /></a>
 
 </div>
 
----
+<img src="brand/readme/divider.svg" width="900" alt="" />
+
+## `NEXORA // WHAT IT IS`
+
+NEXORA is a **native Windows desktop application** — not an Electron wrapper and
+not a website. System data, disk scanning, game detection and optimization all
+run in the Rust layer through native Windows APIs, streamed to a React UI over
+typed Tauri IPC. Free, local-first, with signed auto-updates.
+
+> [!IMPORTANT]
+> This repository (`gazahyp/NEXORA`) is the **release and auto-update host**,
+> not the application source. It exists so every installed client has exactly
+> one trusted place to check for, verify and download new versions.
+
+<img src="brand/readme/divider.svg" width="900" alt="" />
+
+## `LOADOUT`
+
+| Module | What it does |
+|:--|:--|
+| **Live system monitor** | CPU, RAM, GPU, VRAM, storage and network, sampled every second with 7-day stored history |
+| **Game library** | Auto-detects Steam, Epic, Riot and GOG titles with artwork, playtime tracking and favorites |
+| **Smart optimizer** | Scans hardware and software, scores the system, then lists what is worth changing |
+| **Game booster** | One click: frees background apps, applies the power plan, launches the game — restores on exit |
+| **System cleanup** | Temp files, shader cache, startup apps, disk analyzer |
+| **Network tools** | DNS benchmark, stability test, adapter diagnostics |
+| **Advanced tweaks** | Safe, reversible HKCU registry tweaks with full undo |
+| **Performance trends** | Real CPU/RAM/GPU trends across 1h / 6h / 24h / 7d |
+| **Local auth** | Argon2 passwords, email verification, optional Google OAuth (PKCE) — offline-capable |
+| **i18n** | English + Bahasa Indonesia with CI-checked dictionary sync |
+
+<img src="brand/readme/divider.svg" width="900" alt="" />
+
+## `SCREENSHOTS`
+
+<img src="brand/readme/screenshot-placeholder.svg" width="900" alt="Placeholder: no in-app screenshot committed yet." />
+
+<!--
+  To publish a real capture:
+    1. save the PNG to docs/screenshots/dashboard.png
+    2. replace the <img> above with:
+       <img src="docs/screenshots/dashboard.png" width="900" alt="NEXORA dashboard" />
+  Never leave a mock UI standing in for a screenshot.
+-->
+
+<img src="brand/readme/divider.svg" width="900" alt="" />
+
+## `GET IT`
+
+<div align="center">
+
+<a href="https://gazahyp.github.io/NEXORA/"><img src="https://img.shields.io/badge/DOWNLOAD-NEXORA%20for%20Windows-0E7490?style=for-the-badge&labelColor=0A0713&logo=windows&logoColor=22D3EE" alt="Download NEXORA" /></a>
+
+</div>
+
+1. Open the [download page](https://gazahyp.github.io/NEXORA/) — it always shows the newest release.
+2. Run `NEXORA-Setup-<version>.exe` (NSIS) or unpack the portable `.zip`. An `.msi` is published too.
+3. Builds are **not Authenticode-signed** (personal project), so SmartScreen may warn once. Verify
+   against `SHA256SUMS.txt` first:
+
+   ```powershell
+   Get-FileHash .\NEXORA-Setup-<version>.exe -Algorithm SHA256
+   ```
+
+**Updating.** Installed clients update themselves from
+[`latest.json`](https://github.com/gazahyp/NEXORA/releases/latest/download/latest.json): the app
+downloads the new installer, checks its **minisign (Ed25519)** signature against the public key
+embedded in the build, then offers **Install & Restart**. Settings → Update also checks on demand,
+and auto-download respects the *Auto update* toggle.
+
+<img src="brand/readme/divider.svg" width="900" alt="" />
 
 ## What is this repository?
 
@@ -39,9 +103,9 @@ It contains **no application source code** — only:
 | [`index.html`](https://gazahyp.github.io/NEXORA/) | GitHub Pages download landing page |
 | [`latest.json`](latest.json) *(in-tree copy)* | Same-origin manifest mirror used by the landing page |
 | [Releases](../../releases) | Signed installers, portable archives, checksums |
-| [`docs/`](docs/) | Privacy policy, terms, third-party licenses |
+| [`docs/`](docs/) | Privacy policy, terms, third-party licenses, screenshot slots |
 | [`LICENSE`](LICENSE) · [`SECURITY.md`](SECURITY.md) · [`CONTRIBUTING.md`](CONTRIBUTING.md) | Project governance |
-| [`brand/`](brand/) | Official NEXORA logo assets (SVG) |
+| [`brand/`](brand/) | Official NEXORA logo assets (SVG) + README artwork |
 
 > [!IMPORTANT]
 > `latest.json` (both copies) and the Releases are **machine-generated** by
@@ -168,4 +232,10 @@ belong to their respective publishers.
 
 ---
 
-<sub>Made with ☕ by <a href="https://github.com/gazahyp">Gaza Ibrahim</a> — <a href="https://gazahyp.github.io/NEXORA/">download NEXORA</a></sub>
+<div align="center">
+
+<sub>Made with &#9749; by <a href="https://github.com/gazahyp">Gaza Ibrahim</a> — <a href="https://gazahyp.github.io/NEXORA/">download NEXORA</a></sub>
+
+<sub><i>if it isn't shipped, it isn't done.</i></sub>
+
+</div>
