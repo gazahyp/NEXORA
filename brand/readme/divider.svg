@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="18" viewBox="0 0 900 18" role="img" aria-label="Section divider">
+  <!-- Neon HUD divider. Carries its own dark strip so the neon reads on both
+       GitHub themes instead of inheriting the visitor's background. -->
+  <defs>
+    <linearGradient id="dLine" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A855F7" stop-opacity="0.85"/>
+      <stop offset="0.5" stop-color="#6D28D9" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="900" height="18" fill="#0A0713"/>
+  <rect x="0" y="7.5" width="900" height="1.5" fill="url(#dLine)"/>
+  <rect x="0" y="5" width="24" height="6" fill="#A855F7"/>
+  <rect x="876" y="5" width="24" height="6" fill="#22D3EE"/>
+  <g fill="#22D3EE" opacity="0.45">
+    <rect x="420" y="7" width="4" height="4"/>
+    <rect x="436" y="7" width="4" height="4"/>
+    <rect x="452" y="7" width="4" height="4"/>
+    <rect x="468" y="7" width="4" height="4"/>
+  </g>
+  <g fill="#A855F7" opacity="0.45">
+    <rect x="492" y="7" width="4" height="4"/>
+    <rect x="508" y="7" width="4" height="4"/>
+    <rect x="524" y="7" width="4" height="4"/>
+  </g>
+</svg>

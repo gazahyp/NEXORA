@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420" role="img" aria-label="Placeholder frame reserved for an in-app screenshot, 16:9, to be dropped into docs/screenshots/.">
+  <!-- Intentionally empty 16:9 slot. It exists so the README renders a
+       deliberate placeholder instead of a broken image, and it is clearly
+       labelled as a placeholder: no invented UI is drawn here. Replace it by
+       adding the real capture and pointing the README <img> at that file. -->
+  <defs>
+    <pattern id="pDiag" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <path d="M0 0 V14" stroke="#151A27" stroke-width="1.4"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="420" rx="14" fill="#0A0713"/>
+  <rect width="900" height="420" rx="14" fill="url(#pDiag)"/>
+  <rect x="1" y="1" width="898" height="418" rx="13" fill="none" stroke="#2A3142" stroke-width="2" stroke-dasharray="10 7"/>
+
+  <!-- HUD corner brackets -->
+  <g fill="none" stroke="#A855F7" stroke-width="3">
+    <path d="M22 54 V22 H54"/>
+  </g>
+  <g fill="none" stroke="#22D3EE" stroke-width="3">
+    <path d="M878 366 V398 H846"/>
+  </g>
+
+  <text x="450" y="176" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="15" letter-spacing="4" fill="#A855F7">[ SCREENSHOT SLOT ]</text>
+  <text x="450" y="212" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="19" font-weight="600" fill="#E6E9F0">No capture committed yet</text>
+  <text x="450" y="244" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#8A93A6">Drop the PNG at docs/screenshots/dashboard.png</text>
+  <text x="450" y="266" text-anchor="middle" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" fill="#8A93A6">then swap this image for it in README.md.</text>
+
+  <path d="M180 300 H720" stroke="#232A3A" stroke-width="1.5"/>
+  <text x="450" y="334" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="12" letter-spacing="2.4" fill="#4E5A70">16:9 &#183; 1600&#215;900 RECOMMENDED &#183; DARK THEME</text>
+</svg>
